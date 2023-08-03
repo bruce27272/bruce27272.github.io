@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo 123</title>
+  <title>美食工程師</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://bruce27272.github.io/project/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://bruce27272.github.io/project/"/>
   <updated>2023-08-03T02:56:04.730Z</updated>
-  <id>http://example.com/</id>
+  <id>https://bruce27272.github.io/project/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>Bruce</name>
     
   </author>
   
@@ -18,8 +18,8 @@
   
   <entry>
     <title>�Ĥ@�g</title>
-    <link href="http://example.com/2023/08/03/website/"/>
-    <id>http://example.com/2023/08/03/website/</id>
+    <link href="https://bruce27272.github.io/project/2023/08/03/website/"/>
+    <id>https://bruce27272.github.io/project/2023/08/03/website/</id>
     <published>2023-08-03T01:49:23.000Z</published>
     <updated>2023-08-03T02:56:04.730Z</updated>
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2023/08/03/hello-world/"/>
-    <id>http://example.com/2023/08/03/hello-world/</id>
+    <link href="https://bruce27272.github.io/project/2023/08/03/hello-world/"/>
+    <id>https://bruce27272.github.io/project/2023/08/03/hello-world/</id>
     <published>2023-08-03T01:46:06.217Z</published>
     <updated>2023-08-03T01:46:06.217Z</updated>
     
