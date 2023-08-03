@@ -3,11 +3,11 @@
   <title>美食工程師</title>
   
   
-  <link href="https://bruce27272.github.io/project/atom.xml" rel="self"/>
+  <link href="https://bruce27272.github.io/atom.xml" rel="self"/>
   
-  <link href="https://bruce27272.github.io/project/"/>
-  <updated>2023-08-03T02:56:04.730Z</updated>
-  <id>https://bruce27272.github.io/project/</id>
+  <link href="https://bruce27272.github.io/"/>
+  <updated>2023-08-03T03:09:25.561Z</updated>
+  <id>https://bruce27272.github.io/</id>
   
   <author>
     <name>Bruce</name>
@@ -17,18 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>�Ĥ@�g</title>
-    <link href="https://bruce27272.github.io/project/2023/08/03/website/"/>
-    <id>https://bruce27272.github.io/project/2023/08/03/website/</id>
+    <title>第一篇</title>
+    <link href="https://bruce27272.github.io/2023/08/03/website/"/>
+    <id>https://bruce27272.github.io/2023/08/03/website/</id>
     <published>2023-08-03T01:49:23.000Z</published>
-    <updated>2023-08-03T02:56:04.730Z</updated>
+    <updated>2023-08-03T03:09:25.561Z</updated>
     
-    <content type="html"><![CDATA[<p>�d�F�X�ѡA�&#96;��إߧ����A�Ĥ@���ۦ�ε{�����覡�إ߳�����A�٭n�h�h���x�C</p>]]></content>
+    <content type="html"><![CDATA[<p>搞了幾天，總算建立完成，第一次自行用程式的方式建立部落格，還要多多熟悉。</p>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;�d�F�X�ѡA�&amp;#96;��إߧ����A�Ĥ@���ۦ�ε{�����覡�إ߳�����A�٭n�h�h���x�C&lt;/p&gt;
+    <summary type="html">&lt;p&gt;搞了幾天，總算建立完成，第一次自行用程式的方式建立部落格，還要多多熟悉。&lt;/p&gt;
 </summary>
       
     
@@ -39,8 +39,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="https://bruce27272.github.io/project/2023/08/03/hello-world/"/>
-    <id>https://bruce27272.github.io/project/2023/08/03/hello-world/</id>
+    <link href="https://bruce27272.github.io/2023/08/03/hello-world/"/>
+    <id>https://bruce27272.github.io/2023/08/03/hello-world/</id>
     <published>2023-08-03T01:46:06.217Z</published>
     <updated>2023-08-03T01:46:06.217Z</updated>
     
