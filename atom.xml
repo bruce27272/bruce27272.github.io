@@ -6,7 +6,7 @@
   <link href="https://bruce27272.github.io/atom.xml" rel="self"/>
   
   <link href="https://bruce27272.github.io/"/>
-  <updated>2023-08-04T02:19:45.676Z</updated>
+  <updated>2023-08-04T04:03:36.810Z</updated>
   <id>https://bruce27272.github.io/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>ruckus-IXC7150 韌體升級及常用指令</title>
+    <link href="https://bruce27272.github.io/2023/08/04/ruckus-7150/"/>
+    <id>https://bruce27272.github.io/2023/08/04/ruckus-7150/</id>
+    <published>2023-08-04T03:43:13.000Z</published>
+    <updated>2023-08-04T04:03:36.810Z</updated>
+    
+    <content type="html"><![CDATA[<p>正式的第一篇文章!!</p><p>最近工作上要將公司內用的Edge端交換器進行韌體更新</p><p>前一份工作沒碰過Ruckus的交換器</p><p>公司採用的是Ruckus ICX-7150</p><p>找了一些資訊及供應商提供的韌體升級指令，就做點紀錄</p><p>本次要升級至目前最新版本08.0.95j版本</p><p>因目前交換器版本較舊為08.0.61b</p><p>升級會分2次升級，因08.0.95j為UFI韌體版本</p><p>UFI版本具供應商指出，為包含韌體及boot檔</p><p>與之前non-UFI版本為韌體及boot檔分開版本不同</p><p>因08.0.61b版本過舊，需先升級為08.0.90版本作為跳版再升級為08.0.95j</p><span id="more"></span><p>以下為原本升級計畫的更新指令</p><p>#升級 90d</p><p>插入隨身碟</p><p>| #mount disk0 |<br>| #copy disk0 flash SPS08090d.bin secondary |<br>| #copy disk0 flash SPS08090d.bin primary |<br>| #copy disk0 flash mnz10115.bin bootrom |</p><p>#conf t<br>#boot system flash primary<br>#end<br>#wr me<br>#reload</p><p>升級 95j</p><p>#mount disk0<br>#copy disk0 flash SPS08095jufi.bin secondary<br>#copy disk0 flash SPS08095jufi.bin primary</p><p>#reload<br>#y</p><p>降韌體</p><p>按b 進入底層</p><p>#printenv</p><p>將本機IP設定為server ip</p><p>#setenv image_name SPS08090d.bin<br>#setenv uboot mnz10115.bin<br>#update_primary<br>#update_secondary<br>#update_uboot     (會置換uboot partition 2)<br>#boot_primary<br>#reset</p><p>重開後 按b 進入底層</p><p>#update_uboot     (會置換uboot partition 1)<br>#reset</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;正式的第一篇文章!!&lt;/p&gt;
+&lt;p&gt;最近工作上要將公司內用的Edge端交換器進行韌體更新&lt;/p&gt;
+&lt;p&gt;前一份工作沒碰過Ruckus的交換器&lt;/p&gt;
+&lt;p&gt;公司採用的是Ruckus ICX-7150&lt;/p&gt;
+&lt;p&gt;找了一些資訊及供應商提供的韌體升級指令，就做點紀錄&lt;/p&gt;
+&lt;p&gt;本次要升級至目前最新版本08.0.95j版本&lt;/p&gt;
+&lt;p&gt;因目前交換器版本較舊為08.0.61b&lt;/p&gt;
+&lt;p&gt;升級會分2次升級，因08.0.95j為UFI韌體版本&lt;/p&gt;
+&lt;p&gt;UFI版本具供應商指出，為包含韌體及boot檔&lt;/p&gt;
+&lt;p&gt;與之前non-UFI版本為韌體及boot檔分開版本不同&lt;/p&gt;
+&lt;p&gt;因08.0.61b版本過舊，需先升級為08.0.90版本作為跳版再升級為08.0.95j&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技術紀錄" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/"/>
+    
+    
+    <category term="ruckus" scheme="https://bruce27272.github.io/tags/ruckus/"/>
+    
+    <category term="韌體升級" scheme="https://bruce27272.github.io/tags/%E9%9F%8C%E9%AB%94%E5%8D%87%E7%B4%9A/"/>
+    
+  </entry>
+  
+  <entry>
     <title>第一篇</title>
     <link href="https://bruce27272.github.io/2023/08/03/website/"/>
     <id>https://bruce27272.github.io/2023/08/03/website/</id>
     <published>2023-08-03T01:49:23.000Z</published>
-    <updated>2023-08-04T02:19:45.676Z</updated>
+    <updated>2023-08-04T04:04:45.377Z</updated>
     
     <content type="html"><![CDATA[<p>搞了幾天，總算建立完成，第一次自行用程式的方式建立部落格，還要多多熟悉。</p>]]></content>
     
@@ -34,12 +67,6 @@
     
     
     
-    <category term="test" scheme="https://bruce27272.github.io/categories/test/"/>
-    
-    
-    <category term="one" scheme="https://bruce27272.github.io/tags/one/"/>
-    
-    <category term="test" scheme="https://bruce27272.github.io/tags/test/"/>
     
   </entry>
   
