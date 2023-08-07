@@ -6,7 +6,7 @@
   <link href="https://bruce27272.github.io/atom.xml" rel="self"/>
   
   <link href="https://bruce27272.github.io/"/>
-  <updated>2023-08-07T08:24:59.067Z</updated>
+  <updated>2023-08-07T08:31:34.183Z</updated>
   <id>https://bruce27272.github.io/</id>
   
   <author>
@@ -17,19 +17,19 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>ruckus-ICX7150 韌體升級及常用指令</title>
+    <title>Brocade/Ruckus-ICX7150 韌體升級及常用指令</title>
     <link href="https://bruce27272.github.io/2023/08/04/ruckus-7150/"/>
     <id>https://bruce27272.github.io/2023/08/04/ruckus-7150/</id>
     <published>2023-08-04T03:43:13.000Z</published>
-    <updated>2023-08-07T08:24:59.067Z</updated>
+    <updated>2023-08-07T08:31:34.183Z</updated>
     
-    <content type="html"><![CDATA[<p>正式的第一篇文章!!</p><p>最近工作上要將公司內用的Edge端交換器進行韌體更新</p><p>前一份工作沒碰過Ruckus的交換器</p><p>公司採用的是Ruckus ICX-7150</p><p>找了一些資訊及供應商提供的韌體升級指令，就做點紀錄</p><p>本次要升級至目前最新版本08.0.95j版本</p><p>因目前交換器版本較舊為08.0.61b</p><p>升級會分2次升級，因08.0.95j為UFI韌體版本</p><p>UFI版本具供應商指出，為包含韌體及boot檔</p><p>與之前non-UFI版本為韌體及boot檔分開版本不同</p><p>因08.0.61b版本過舊，需先升級為08.0.90版本作為跳版再升級為08.0.95j</p><span id="more"></span><p>以下為原本升級計畫的更新指令</p><p>#升級 90d</p><p>插入隨身碟</p><p><code> #mount disk0</code><br><code> #copy disk0 flash SPS08090d.bin secondary</code><br><code> #copy disk0 flash SPS08090d.bin primary</code><br><code> #copy disk0 flash mnz10115.bin bootrom</code></p><p><code>#conf t</code><br><code>#boot system flash primary</code><br><code>#end</code><br><code>#wr me</code><br><code>#reload</code></p><p>#升級 95j</p><p><code>#mount disk0</code><br><code>#copy disk0 flash SPS08095jufi.bin secondary</code><br><code>#copy disk0 flash SPS08095jufi.bin primary</code></p><p><code>#reload</code><br><code>#y</code></p><p>降韌體</p><p>按b 進入底層</p><p><code>#printenv</code></p><p>將本機IP設定為server ip</p><p><code>#setenv image_name SPS08090d.bin</code><br><code>#setenv uboot mnz10115.bin</code><br><code>#update_primary</code><br><code>#update_secondary</code><br><code>#update_uboot    (會置換uboot partition 2)</code><br><code>#boot_primary</code><br><code>#reset</code></p><p>重開後 按b 進入底層</p><p><code>#update_uboot (會置換uboot partition 1) </code><br><code>#reset</code></p><p>但實際更新時發現61版的韌體不知是否有Bug</p><p>在放入90d的韌體，下指令重啟後，會陷入無限重啟的迴圈內，</p><p>進入底層發現</p><p>bootimge 還是在61版</p><p>所以要使用TFTP的方式，將90d及uboot檔案放入來進行更新(即使用原先要降韌體的方式)</p><p>順利更新至90d後 即可採正常方式更新至95j</p><p>以下為ICX-7150常用指令，Ruckus交換器應該通用</p><p>設定Switch的設備名稱：<br><code>#configure terminal</code><br><code>#hostname ruckusswitch</code></p><p>設定IP及預設閘道：<br><code>#configure terminal</code><br><code>#ip address 10.7.7.239 255.255.255.0</code><br><code>#ip default-gateway 10.7.7.254</code></p><p>設定telnet連線登入密碼：<br><code>#configure terminal</code><br><code>#enable telnet password Pw123456</code></p><p>設定Enable密碼：<br><code>#configure terminal</code><br><code>#enable super-user-password Pw123456</code></p><p>備份設定檔案至TFTP Server：<br><code>#copy startup-config tftp 192.168.1.1 test.cfg</code></p><p>還原設定檔至Switch開機設定檔：<br><code>#copy tftp startup-config 192.168.1.1 test.cfg</code></p><p>關閉web管理功能：<br><code>#configure terminal</code><br><code>#no web-management http</code></p><p>設定網路校時功能(假設NTP Server IP為192.168.100.100)：<br><code>#configure terminal</code><br><code>#clock timezone gmt GMT+08</code><br><code>#ntp</code><br><code>#server 192.168.100.100</code></p><p>查詢Switch目前的韌體版本：<br><code>#show flash</code></p><p>查詢Switch設備序號：<br><code>#show version</code></p><p>重新開機：<br><code>#reload</code></p><p>儲存Switch設定：<br><code>#write memory</code></p><p>啟動10G介面：<br><code>#license install perpetual 1 4x10gr</code><br>授權詢問選”Y”<br><code>#configure terminal</code><br><code>#interface ethernet 1/3/1 to 1/3/4</code><br><code>#speed-duplex 10g-full</code></p><p>查看mini gbic是否有正常啟動：<br><code>#show media</code></p><p>關閉頁面顯示分頁功能(Disable page display mode)：<br><code>#skip</code></p><p>啟動頁面顯示分頁功能(Enable page display mode)：<br><code>#page</code></p><p>查詢Switch Port狀態：<br><code>#show interfaces brief</code></p><p>設定介面啟動底層迴圈偵測功能(loop detection)：<br><code>#configure terminal</code><br><code>#interface ethernet 1/1/1</code><br><code>#loop-detection</code></p><p>顯示目前底層迴圈偵測狀態：<br><code>#show loop-detection status</code></p><p>解除底層迴圈封鎖狀態：<br><code>#clear loop-detection</code></p><p>顯示時取消分頁顯示：<br><code>#skip</code></p><p>顯示時使用分頁顯示：<br><code>#page</code></p>]]></content>
+    <content type="html"><![CDATA[<p>正式的第一篇文章!!</p><p>最近工作上要將公司內用的Edge端交換器進行韌體更新</p><p>前一份工作沒碰過Ruckus的交換器</p><p>公司採用的是Brocade&#x2F;Ruckus ICX-7150</p><p>找了一些資訊及供應商提供的韌體升級指令，就做點紀錄</p><p>本次要升級至目前最新版本08.0.95j版本</p><p>因目前交換器版本較舊為08.0.61b</p><p>升級會分2次升級，因08.0.95j為UFI韌體版本</p><p>UFI版本具供應商指出，為包含韌體及boot檔</p><p>與之前non-UFI版本為韌體及boot檔分開版本不同</p><p>因08.0.61b版本過舊，需先升級為08.0.90版本作為跳版再升級為08.0.95j</p><span id="more"></span><p>以下為原本升級計畫的更新指令</p><p>#升級 90d</p><p>插入隨身碟</p><p><code> #mount disk0</code><br><code> #copy disk0 flash SPS08090d.bin secondary</code><br><code> #copy disk0 flash SPS08090d.bin primary</code><br><code> #copy disk0 flash mnz10115.bin bootrom</code></p><p><code>#conf t</code><br><code>#boot system flash primary</code><br><code>#end</code><br><code>#wr me</code><br><code>#reload</code></p><p>#升級 95j</p><p><code>#mount disk0</code><br><code>#copy disk0 flash SPS08095jufi.bin secondary</code><br><code>#copy disk0 flash SPS08095jufi.bin primary</code></p><p><code>#reload</code><br><code>#y</code></p><p>降韌體</p><p>按b 進入底層</p><p><code>#printenv</code></p><p>將本機IP設定為server ip</p><p><code>#setenv image_name SPS08090d.bin</code><br><code>#setenv uboot mnz10115.bin</code><br><code>#update_primary</code><br><code>#update_secondary</code><br><code>#update_uboot    (會置換uboot partition 2)</code><br><code>#boot_primary</code><br><code>#reset</code></p><p>重開後 按b 進入底層</p><p><code>#update_uboot (會置換uboot partition 1) </code><br><code>#reset</code></p><p>但實際更新時發現61版的韌體不知是否有Bug</p><p>在放入90d的韌體，下指令重啟後，會陷入無限重啟的迴圈內，</p><p>進入底層發現</p><p>bootimge 還是在61版</p><p>所以要使用TFTP的方式，將90d及uboot檔案放入來進行更新(即使用原先要降韌體的方式)</p><p>順利更新至90d後 即可採正常方式更新至95j</p><p>以下為ICX-7150常用指令，Ruckus交換器應該通用</p><p>設定Switch的設備名稱：<br><code>#configure terminal</code><br><code>#hostname ruckusswitch</code></p><p>設定IP及預設閘道：<br><code>#configure terminal</code><br><code>#ip address 10.7.7.239 255.255.255.0</code><br><code>#ip default-gateway 10.7.7.254</code></p><p>設定telnet連線登入密碼：<br><code>#configure terminal</code><br><code>#enable telnet password Pw123456</code></p><p>設定Enable密碼：<br><code>#configure terminal</code><br><code>#enable super-user-password Pw123456</code></p><p>備份設定檔案至TFTP Server：<br><code>#copy startup-config tftp 192.168.1.1 test.cfg</code></p><p>還原設定檔至Switch開機設定檔：<br><code>#copy tftp startup-config 192.168.1.1 test.cfg</code></p><p>關閉web管理功能：<br><code>#configure terminal</code><br><code>#no web-management http</code></p><p>設定網路校時功能(假設NTP Server IP為192.168.100.100)：<br><code>#configure terminal</code><br><code>#clock timezone gmt GMT+08</code><br><code>#ntp</code><br><code>#server 192.168.100.100</code></p><p>查詢Switch目前的韌體版本：<br><code>#show flash</code></p><p>查詢Switch設備序號：<br><code>#show version</code></p><p>重新開機：<br><code>#reload</code></p><p>儲存Switch設定：<br><code>#write memory</code></p><p>啟動10G介面：<br><code>#license install perpetual 1 4x10gr</code><br>授權詢問選”Y”<br><code>#configure terminal</code><br><code>#interface ethernet 1/3/1 to 1/3/4</code><br><code>#speed-duplex 10g-full</code></p><p>查看mini gbic是否有正常啟動：<br><code>#show media</code></p><p>關閉頁面顯示分頁功能(Disable page display mode)：<br><code>#skip</code></p><p>啟動頁面顯示分頁功能(Enable page display mode)：<br><code>#page</code></p><p>查詢Switch Port狀態：<br><code>#show interfaces brief</code></p><p>設定介面啟動底層迴圈偵測功能(loop detection)：<br><code>#configure terminal</code><br><code>#interface ethernet 1/1/1</code><br><code>#loop-detection</code></p><p>顯示目前底層迴圈偵測狀態：<br><code>#show loop-detection status</code></p><p>解除底層迴圈封鎖狀態：<br><code>#clear loop-detection</code></p><p>顯示時取消分頁顯示：<br><code>#skip</code></p><p>顯示時使用分頁顯示：<br><code>#page</code></p>]]></content>
     
     
     <summary type="html">&lt;p&gt;正式的第一篇文章!!&lt;/p&gt;
 &lt;p&gt;最近工作上要將公司內用的Edge端交換器進行韌體更新&lt;/p&gt;
 &lt;p&gt;前一份工作沒碰過Ruckus的交換器&lt;/p&gt;
-&lt;p&gt;公司採用的是Ruckus ICX-7150&lt;/p&gt;
+&lt;p&gt;公司採用的是Brocade&amp;#x2F;Ruckus ICX-7150&lt;/p&gt;
 &lt;p&gt;找了一些資訊及供應商提供的韌體升級指令，就做點紀錄&lt;/p&gt;
 &lt;p&gt;本次要升級至目前最新版本08.0.95j版本&lt;/p&gt;
 &lt;p&gt;因目前交換器版本較舊為08.0.61b&lt;/p&gt;
@@ -43,11 +43,13 @@
     <category term="技術紀錄" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/"/>
     
     
-    <category term="ruckus" scheme="https://bruce27272.github.io/tags/ruckus/"/>
+    <category term="Ruckus" scheme="https://bruce27272.github.io/tags/Ruckus/"/>
     
     <category term="韌體升級" scheme="https://bruce27272.github.io/tags/%E9%9F%8C%E9%AB%94%E5%8D%87%E7%B4%9A/"/>
     
     <category term="ICX7150" scheme="https://bruce27272.github.io/tags/ICX7150/"/>
+    
+    <category term="Brocade" scheme="https://bruce27272.github.io/tags/Brocade/"/>
     
   </entry>
   
