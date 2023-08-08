@@ -6,7 +6,7 @@
   <link href="https://bruce27272.github.io/atom.xml" rel="self"/>
   
   <link href="https://bruce27272.github.io/"/>
-  <updated>2023-08-08T08:39:32.995Z</updated>
+  <updated>2023-08-08T08:53:55.926Z</updated>
   <id>https://bruce27272.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/"/>
     <id>https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/</id>
     <published>2023-08-08T10:52:23.000Z</published>
-    <updated>2023-08-08T08:39:32.995Z</updated>
+    <updated>2023-08-08T08:53:55.926Z</updated>
     
-    <content type="html"><![CDATA[<p>在建立網站後，想說要運用Google Analytics來觀察瀏覽人數</p><p>找了一些資料後，發現Google Analytics於2023年7月開始要使用Google Analytics 4(GA4)來設定</p><p>目前我使用的Next主題需要做些調整才能順利抓取數據</p><p>很久以前有用過Google Analytics 但已經忘記如何申請</p><p>就重新申請並藉由這次做個紀錄</p><span id="more"></span><p><img src="/.io//1.PNG" alt="建立帳戶"></p><p><img src="/.io//2.PNG" alt="建立屬性"></p><p><img src="/.io//3.PNG" alt="設定商家"></p><p><img src="/.io//4.PNG" alt="選擇目標"></p><p><img src="/.io//7.PNG" alt="接受服務條款"></p><p>在輸入串流網址後，在完成建立後可以看到串流ID跟評估ID</p><p><img src="/.io//5.PNG" alt="完成建立"></p><p>接著找到需加入的程式碼，複製以下程式碼</p><p><img src="/.io//6.PNG" alt="程式碼"></p><p>接著要註解掉主题配置文件中代碼及追踪ID</p><p>檔案位置 &#x2F;themes&#x2F;next&#x2F;_config.yml</p><p><code># Google Analytics</code><br><code>#google_analytics: xxxxxx</code></p><p>更改主題文件google-analytics.njk</p><p>檔案位置 &#x2F;themes&#x2F;next&#x2F;layout&#x2F;_third-party&#x2F;analytics&#x2F;google-analytics.njk</p><p>原本的程式碼，建議先備份</p><p><code>&#123;%- if theme.google_analytics.tracking_id %&#125;</code><br><code>  &#123;%- if not theme.google_analytics.only_pageview %&#125;</code><br><code>    &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=&#123;&#123; theme.google_analytics.tracking_id &#125;&#125;&quot;&gt;&lt;/script&gt;</code><br><code>  &#123;%- endif %&#125;</code><br><code>  &#123;&#123; next_data('google_analytics', theme.google_analytics) &#125;&#125;</code><br><code>  &#123;&#123; next_js('third-party/analytics/google-analytics.js') &#125;&#125;</code><br><code>&#123;%- endif %&#125;</code></p><p>然後貼上剛剛複製的程式碼，如下圖</p><p><img src="/.io//8.PNG" alt="程式碼2"></p><p>接著回到Google Analytics主控台就可以看到資料已收集</p>]]></content>
+    <content type="html"><![CDATA[<p>在建立網站後，想說要運用Google Analytics來觀察瀏覽人數</p><p>找了一些資料後，發現Google Analytics於2023年7月開始要使用Google Analytics 4(GA4)來設定</p><p>目前我使用的Next主題需要做些調整才能順利抓取數據</p><p>很久以前有用過Google Analytics 但已經忘記如何申請</p><p>就重新申請並藉由這次做個紀錄</p><span id="more"></span><p><img src="/.io//1.PNG" alt="建立帳戶"></p><p><img src="/.io//2.PNG" alt="建立屬性"></p><p><img src="/.io//3.PNG" alt="設定商家"></p><p><img src="/.io//4.PNG" alt="選擇目標"></p><p><img src="/.io//7.PNG" alt="接受服務條款"></p><p>在輸入串流網址後，在完成建立後可以看到串流ID跟評估ID</p><p><img src="/.io//5.PNG" alt="完成建立"></p><p>接著找到需加入的程式碼，複製以下程式碼</p><p><img src="/.io//6.PNG" alt="程式碼"></p><p>接著要註解掉主题配置文件中代碼及追踪ID</p><p>檔案位置 &#x2F;themes&#x2F;next&#x2F;_config.yml</p><p><code># Google Analytics</code><br><code>#google_analytics: xxxxxx</code></p><p>更改主題文件google-analytics.njk</p><p>檔案位置 &#x2F;themes&#x2F;next&#x2F;layout&#x2F;_third-party&#x2F;analytics&#x2F;google-analytics.njk</p><p>原本的程式碼，建議先備份</p><pre><code>&#123;%- if theme.google_analytics.tracking_id %&#125;      &#123;%- if not theme.google_analytics.only_pageview %&#125;       &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=&#123;&#123; theme.google_analytics.tracking_id &#125;&#125;&quot;&gt;&lt;/script&gt;      &#123;%- endif %&#125;     &#123;&#123; next_data('google_analytics', theme.google_analytics) &#125;&#125;     &#123;&#123; next_js('third-party/analytics/google-analytics.js') &#125;&#125;    &#123;%- endif %&#125;    </code></pre><p>然後貼上剛剛複製的程式碼，如下圖</p><p><img src="/.io//8.PNG" alt="程式碼2"></p><p>接著回到Google Analytics主控台就可以看到資料已收集</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;在建立網站後，想說要運用Google Analytics來觀察瀏覽人數&lt;/p&gt;

@@ -46,7 +46,7 @@
 <meta property="og:image" content="https://bruce27272.github.io/.io//6.PNG">
 <meta property="og:image" content="https://bruce27272.github.io/.io//8.PNG">
 <meta property="article:published_time" content="2023-08-08T10:52:23.000Z">
-<meta property="article:modified_time" content="2023-08-08T08:39:32.995Z">
+<meta property="article:modified_time" content="2023-08-08T08:53:55.926Z">
 <meta property="article:author" content="Bruce">
 <meta property="article:tag" content="Google Analytics">
 <meta property="article:tag" content="Hexo">
@@ -223,7 +223,7 @@
       <span class="post-meta-item-text">發表於</span>
       
 
-      <time title="創建時間：2023-08-08 18:52:23 / 修改時間：16:39:32" itemprop="dateCreated datePublished" datetime="2023-08-08T18:52:23+08:00">2023-08-08</time>
+      <time title="創建時間：2023-08-08 18:52:23 / 修改時間：16:53:55" itemprop="dateCreated datePublished" datetime="2023-08-08T18:52:23+08:00">2023-08-08</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -266,7 +266,14 @@
 <p>更改主題文件google-analytics.njk</p>
 <p>檔案位置 &#x2F;themes&#x2F;next&#x2F;layout&#x2F;_third-party&#x2F;analytics&#x2F;google-analytics.njk</p>
 <p>原本的程式碼，建議先備份</p>
-<p><code>&#123;%- if theme.google_analytics.tracking_id %&#125;</code><br><code>  &#123;%- if not theme.google_analytics.only_pageview %&#125;</code><br><code>    &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=&#123;&#123; theme.google_analytics.tracking_id &#125;&#125;&quot;&gt;&lt;/script&gt;</code><br><code>  &#123;%- endif %&#125;</code><br><code>  &#123;&#123; next_data('google_analytics', theme.google_analytics) &#125;&#125;</code><br><code>  &#123;&#123; next_js('third-party/analytics/google-analytics.js') &#125;&#125;</code><br><code>&#123;%- endif %&#125;</code></p>
+<pre><code>&#123;%- if theme.google_analytics.tracking_id %&#125;    
+  &#123;%- if not theme.google_analytics.only_pageview %&#125;    
+   &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=&#123;&#123; theme.google_analytics.tracking_id &#125;&#125;&quot;&gt;&lt;/script&gt;    
+  &#123;%- endif %&#125;    
+ &#123;&#123; next_data('google_analytics', theme.google_analytics) &#125;&#125;    
+ &#123;&#123; next_js('third-party/analytics/google-analytics.js') &#125;&#125;    
+&#123;%- endif %&#125;    
+</code></pre>
 <p>然後貼上剛剛複製的程式碼，如下圖</p>
 <p><img src="/.io//8.PNG" alt="程式碼2"></p>
 <p>接著回到Google Analytics主控台就可以看到資料已收集</p>
