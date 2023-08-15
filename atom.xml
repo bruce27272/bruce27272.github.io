@@ -6,7 +6,7 @@
   <link href="https://bruce27272.github.io/atom.xml" rel="self"/>
   
   <link href="https://bruce27272.github.io/"/>
-  <updated>2023-08-14T08:59:29.097Z</updated>
+  <updated>2023-08-15T07:30:45.628Z</updated>
   <id>https://bruce27272.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo Next樣板開啟 Gitalk 留言版</title>
+    <link href="https://bruce27272.github.io/2023/08/15/Gitalk/"/>
+    <id>https://bruce27272.github.io/2023/08/15/Gitalk/</id>
+    <published>2023-08-15T06:21:15.000Z</published>
+    <updated>2023-08-15T07:30:45.628Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天試著幫我的部落格新增留言板</p><p>看了一些資料</p><p>蠻多人都是搭配Disqus</p><p>但有些人反映會收不到訊息</p><p>所以我採用Gitalk</p><p>Gitalk 是一個基于 GitHub Issue所開發的留言版套件</p><span id="more"></span><p>首先建立 GitHub OAuth APP</p><p>由於要使用 Gitalk 必須有 GitHub OAuth</p><p>所以先開啟 GitHub之後到 Setting</p><p><img src="/2023/08/15/Gitalk/1.PNG" alt="Setting"></p><p>接下來選擇 Developer settings</p><p><img src="/2023/08/15/Gitalk/2.PNG" alt="Developer"></p><p>然後點 OAuth Apps</p><p><img src="/2023/08/15/Gitalk/3.PNG" alt="OAuth"></p><p>未建立過OAuh 點Register a new application</p><p><img src="/2023/08/15/Gitalk/4.PNG" alt="Register a new application"></p><p>接下來依照欄位填寫即可</p><pre><code>Application name - 應用程式名稱    Homepage URL - 應用程式網域 → 填部落格網址    Application description - 應用程式描述    Authorization callback URL - 授權回應網址 → 填部落格網址    </code></pre><p>參考如下</p><p><img src="/2023/08/15/Gitalk/5.PNG" alt="欄位"></p><p>申請完之後你就會獲得這兩組 ID (Client ID、Client Secret)</p><p>請先複製起來，稍後會使用到</p><p><img src="/2023/08/15/Gitalk/6.PNG" alt="key"></p><p>接下來就開啟 Next 佈景主題的 _config.yml</p><p>然後找到「Gitalk」的地方</p><p>就可以看到相關設定</p><p>依照欄位填入即可</p><p><img src="/2023/08/15/Gitalk/7.PNG" alt="next"></p><pre><code>enable: true    github_id:  # GitHub 作者帳號    repo: hsiangfeng.github.io # Repo 名稱，通常就是網域    client_id: xxxxxxxx # 剛申請的 Client ID    client_secret: xxxxxxxx # 剛申請的 Client Secret    admin_user: hsiangfeng # 管理者的帳號    distraction_free_mode: true # 無干擾模式    language: zh-TW ## 語系    </code></pre><p>接下來只需要部屬就可以看到留言版開啟了</p><p>此外第一次使用會需要啟用 OAuth</p><p>只需要到任一篇文章內點一下啟用即可</p><p><img src="/2023/08/15/Gitalk/8.PNG" alt="啟用"></p><p>只要有人在你的 Gitalk 留言時 Gitalk 就會在你的 GitHub repo 上開啟一個 issues</p><p>此外可以增加設定增加一行 labels 來做一下分類方便管理</p><pre><code>enable: true    github_id:  # GitHub 作者帳號    repo: hsiangfeng.github.io # Repo 名稱，通常就是網域    client_id: xxxxxxxx # 剛申請的 Client ID    client_secret: xxxxxxxx # 剛申請的 Client Secret    admin_user: hsiangfeng # 管理者的帳號    distraction_free_mode: true # 無干擾模式    language: zh-TW ## 語系    labels: Gitalk    </code></pre><p>最後Gitalk 留言版套件可以使用 MD 格式同時支援高亮的</p><p>只要使用高亮的語法可以產生不同的效果</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;今天試著幫我的部落格新增留言板&lt;/p&gt;
+&lt;p&gt;看了一些資料&lt;/p&gt;
+&lt;p&gt;蠻多人都是搭配Disqus&lt;/p&gt;
+&lt;p&gt;但有些人反映會收不到訊息&lt;/p&gt;
+&lt;p&gt;所以我採用Gitalk&lt;/p&gt;
+&lt;p&gt;Gitalk 是一個基于 GitHub Issue所開發的留言版套件&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技術紀錄" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/"/>
+    
+    
+    <category term="Hexo" scheme="https://bruce27272.github.io/tags/Hexo/"/>
+    
+    <category term="Gitalk" scheme="https://bruce27272.github.io/tags/Gitalk/"/>
+    
+    <category term="Git" scheme="https://bruce27272.github.io/tags/Git/"/>
+    
+  </entry>
   
   <entry>
     <title>Google Analytics 4（GA4）之 Hexo Next主題</title>

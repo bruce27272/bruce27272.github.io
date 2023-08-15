@@ -30,39 +30,39 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"bruce27272.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在建立網站後，想說要運用Google Analytics來觀察瀏覽人數 找了一些資料後，發現Google Analytics於2023年7月開始要使用Google Analytics 4(GA4)來設定 目前我使用的Next主題需要做些調整才能順利抓取數據 很久以前有用過Google Analytics 但已經忘記如何申請 就重新申請並藉由這次做個紀錄">
+    <meta name="description" content="今天試著幫我的部落格新增留言板 看了一些資料 蠻多人都是搭配Disqus 但有些人反映會收不到訊息 所以我採用Gitalk Gitalk 是一個基于 GitHub Issue所開發的留言版套件">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Google Analytics 4（GA4）之 Hexo Next主題">
-<meta property="og:url" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/index.html">
+<meta property="og:title" content="Hexo Next樣板開啟 Gitalk 留言版">
+<meta property="og:url" content="https://bruce27272.github.io/2023/08/15/Gitalk/index.html">
 <meta property="og:site_name" content="美食工程師">
-<meta property="og:description" content="在建立網站後，想說要運用Google Analytics來觀察瀏覽人數 找了一些資料後，發現Google Analytics於2023年7月開始要使用Google Analytics 4(GA4)來設定 目前我使用的Next主題需要做些調整才能順利抓取數據 很久以前有用過Google Analytics 但已經忘記如何申請 就重新申請並藉由這次做個紀錄">
+<meta property="og:description" content="今天試著幫我的部落格新增留言板 看了一些資料 蠻多人都是搭配Disqus 但有些人反映會收不到訊息 所以我採用Gitalk Gitalk 是一個基于 GitHub Issue所開發的留言版套件">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/1.PNG">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/2.PNG">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/3.PNG">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/4.PNG">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/7.png">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/5.PNG">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/6.PNG">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/8.PNG">
-<meta property="article:published_time" content="2023-08-08T10:52:23.000Z">
-<meta property="article:modified_time" content="2023-08-14T08:59:29.097Z">
+<meta property="og:image" content="https://bruce27272.github.io/2023/08/15/Gitalk/1.PNG">
+<meta property="og:image" content="https://bruce27272.github.io/2023/08/15/Gitalk/2.PNG">
+<meta property="og:image" content="https://bruce27272.github.io/2023/08/15/Gitalk/3.PNG">
+<meta property="og:image" content="https://bruce27272.github.io/2023/08/15/Gitalk/4.PNG">
+<meta property="og:image" content="https://bruce27272.github.io/2023/08/15/Gitalk/5.PNG">
+<meta property="og:image" content="https://bruce27272.github.io/2023/08/15/Gitalk/6.PNG">
+<meta property="og:image" content="https://bruce27272.github.io/2023/08/15/Gitalk/7.PNG">
+<meta property="og:image" content="https://bruce27272.github.io/2023/08/15/Gitalk/8.PNG">
+<meta property="article:published_time" content="2023-08-15T06:21:15.000Z">
+<meta property="article:modified_time" content="2023-08-15T07:30:45.628Z">
 <meta property="article:author" content="Bruce">
-<meta property="article:tag" content="Google Analytics">
 <meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="Hexo Next">
+<meta property="article:tag" content="Gitalk">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/1.PNG">
+<meta name="twitter:image" content="https://bruce27272.github.io/2023/08/15/Gitalk/1.PNG">
 
 
-<link rel="canonical" href="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/">
+<link rel="canonical" href="https://bruce27272.github.io/2023/08/15/Gitalk/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh_TW","comments":true,"permalink":"https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/","path":"2023/08/08/GoogleAnalytics4/","title":"Google Analytics 4（GA4）之 Hexo Next主題"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh_TW","comments":true,"permalink":"https://bruce27272.github.io/2023/08/15/Gitalk/","path":"2023/08/15/Gitalk/","title":"Hexo Next樣板開啟 Gitalk 留言版"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Google Analytics 4（GA4）之 Hexo Next主題 | 美食工程師</title>
+<title>Hexo Next樣板開啟 Gitalk 留言版 | 美食工程師</title>
   <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G6CDTP1S08"></script>
  <script>
@@ -193,7 +193,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh_TW">
-    <link itemprop="mainEntityOfPage" href="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/">
+    <link itemprop="mainEntityOfPage" href="https://bruce27272.github.io/2023/08/15/Gitalk/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -206,12 +206,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Google Analytics 4（GA4）之 Hexo Next主題 | 美食工程師">
+      <meta itemprop="name" content="Hexo Next樣板開啟 Gitalk 留言版 | 美食工程師">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Google Analytics 4（GA4）之 Hexo Next主題
+          Hexo Next樣板開啟 Gitalk 留言版
         </h1>
 
         <div class="post-meta-container">
@@ -221,15 +221,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2023-08-08 18:52:23" itemprop="dateCreated datePublished" datetime="2023-08-08T18:52:23+08:00">2023-08-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-08-14 16:59:29" itemprop="dateModified" datetime="2023-08-14T16:59:29+08:00">2023-08-14</time>
+      <time title="創建時間：2023-08-15 14:21:15 / 修改時間：15:30:45" itemprop="dateCreated datePublished" datetime="2023-08-15T14:21:15+08:00">2023-08-15</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -257,39 +251,67 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>在建立網站後，想說要運用Google Analytics來觀察瀏覽人數</p>
-<p>找了一些資料後，發現Google Analytics於2023年7月開始要使用Google Analytics 4(GA4)來設定</p>
-<p>目前我使用的Next主題需要做些調整才能順利抓取數據</p>
-<p>很久以前有用過Google Analytics 但已經忘記如何申請</p>
-<p>就重新申請並藉由這次做個紀錄</p>
+    <div class="post-body" itemprop="articleBody"><p>今天試著幫我的部落格新增留言板</p>
+<p>看了一些資料</p>
+<p>蠻多人都是搭配Disqus</p>
+<p>但有些人反映會收不到訊息</p>
+<p>所以我採用Gitalk</p>
+<p>Gitalk 是一個基于 GitHub Issue所開發的留言版套件</p>
 <span id="more"></span>
 
-<p><img src="/2023/08/08/GoogleAnalytics4/1.PNG" alt="建立帳戶"></p>
-<p><img src="/2023/08/08/GoogleAnalytics4/2.PNG" alt="建立屬性"></p>
-<p><img src="/2023/08/08/GoogleAnalytics4/3.PNG" alt="設定商家"></p>
-<p><img src="/2023/08/08/GoogleAnalytics4/4.PNG" alt="選擇目標"></p>
-<p><img src="/2023/08/08/GoogleAnalytics4/7.png" alt="接受服務條款"></p>
-<p>在輸入串流網址後，在完成建立後可以看到串流ID跟評估ID</p>
-<p><img src="/2023/08/08/GoogleAnalytics4/5.PNG" alt="完成建立"></p>
-<p>接著找到需加入的程式碼，複製以下程式碼</p>
-<p><img src="/2023/08/08/GoogleAnalytics4/6.PNG" alt="程式碼"></p>
-<p>接著要註解掉主题配置文件中代碼及追踪ID</p>
-<p>檔案位置 &#x2F;themes&#x2F;next&#x2F;_config.yml</p>
-<p><code># Google Analytics</code><br><code>#google_analytics: xxxxxx</code></p>
-<p>更改主題文件google-analytics.njk</p>
-<p>檔案位置 &#x2F;themes&#x2F;next&#x2F;layout&#x2F;_third-party&#x2F;analytics&#x2F;google-analytics.njk</p>
-<p>原本的程式碼，建議先備份</p>
-<pre><code>&#123;%- if theme.google_analytics.tracking_id %&#125;    
-  &#123;%- if not theme.google_analytics.only_pageview %&#125;    
-   &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=&#123;&#123; theme.google_analytics.tracking_id &#125;&#125;&quot;&gt;&lt;/script&gt;    
-  &#123;%- endif %&#125;    
- &#123;&#123; next_data('google_analytics', theme.google_analytics) &#125;&#125;    
- &#123;&#123; next_js('third-party/analytics/google-analytics.js') &#125;&#125;    
-&#123;%- endif %&#125;    
+<p>首先建立 GitHub OAuth APP</p>
+<p>由於要使用 Gitalk 必須有 GitHub OAuth</p>
+<p>所以先開啟 GitHub之後到 Setting</p>
+<p><img src="/2023/08/15/Gitalk/1.PNG" alt="Setting"></p>
+<p>接下來選擇 Developer settings</p>
+<p><img src="/2023/08/15/Gitalk/2.PNG" alt="Developer"></p>
+<p>然後點 OAuth Apps</p>
+<p><img src="/2023/08/15/Gitalk/3.PNG" alt="OAuth"></p>
+<p>未建立過OAuh 點Register a new application</p>
+<p><img src="/2023/08/15/Gitalk/4.PNG" alt="Register a new application"></p>
+<p>接下來依照欄位填寫即可</p>
+<pre><code>Application name - 應用程式名稱    
+Homepage URL - 應用程式網域 → 填部落格網址    
+Application description - 應用程式描述    
+Authorization callback URL - 授權回應網址 → 填部落格網址    
 </code></pre>
-<p>然後貼上剛剛複製的程式碼，如下圖</p>
-<p><img src="/2023/08/08/GoogleAnalytics4/8.PNG" alt="程式碼2"></p>
-<p>接著回到Google Analytics主控台就可以看到資料已收集</p>
+<p>參考如下</p>
+<p><img src="/2023/08/15/Gitalk/5.PNG" alt="欄位"></p>
+<p>申請完之後你就會獲得這兩組 ID (Client ID、Client Secret)</p>
+<p>請先複製起來，稍後會使用到</p>
+<p><img src="/2023/08/15/Gitalk/6.PNG" alt="key"></p>
+<p>接下來就開啟 Next 佈景主題的 _config.yml</p>
+<p>然後找到「Gitalk」的地方</p>
+<p>就可以看到相關設定</p>
+<p>依照欄位填入即可</p>
+<p><img src="/2023/08/15/Gitalk/7.PNG" alt="next"></p>
+<pre><code>enable: true    
+github_id:  # GitHub 作者帳號    
+repo: hsiangfeng.github.io # Repo 名稱，通常就是網域    
+client_id: xxxxxxxx # 剛申請的 Client ID    
+client_secret: xxxxxxxx # 剛申請的 Client Secret    
+admin_user: hsiangfeng # 管理者的帳號    
+distraction_free_mode: true # 無干擾模式    
+language: zh-TW ## 語系    
+</code></pre>
+<p>接下來只需要部屬就可以看到留言版開啟了</p>
+<p>此外第一次使用會需要啟用 OAuth</p>
+<p>只需要到任一篇文章內點一下啟用即可</p>
+<p><img src="/2023/08/15/Gitalk/8.PNG" alt="啟用"></p>
+<p>只要有人在你的 Gitalk 留言時 Gitalk 就會在你的 GitHub repo 上開啟一個 issues</p>
+<p>此外可以增加設定增加一行 labels 來做一下分類方便管理</p>
+<pre><code>enable: true    
+github_id:  # GitHub 作者帳號    
+repo: hsiangfeng.github.io # Repo 名稱，通常就是網域    
+client_id: xxxxxxxx # 剛申請的 Client ID    
+client_secret: xxxxxxxx # 剛申請的 Client Secret    
+admin_user: hsiangfeng # 管理者的帳號    
+distraction_free_mode: true # 無干擾模式    
+language: zh-TW ## 語系    
+labels: Gitalk    
+</code></pre>
+<p>最後Gitalk 留言版套件可以使用 MD 格式同時支援高亮的</p>
+<p>只要使用高亮的語法可以產生不同的效果</p>
 
     </div>
 
@@ -299,23 +321,20 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Google-Analytics/" rel="tag"># Google Analytics</a>
               <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-              <a href="/tags/Hexo-Next/" rel="tag"># Hexo Next</a>
+              <a href="/tags/Gitalk/" rel="tag"># Gitalk</a>
+              <a href="/tags/Git/" rel="tag"># Git</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/08/04/ruckus-7150/" rel="prev" title="Brocade/Ruckus-ICX7150 韌體升級及常用指令">
-                  <i class="fa fa-angle-left"></i> Brocade/Ruckus-ICX7150 韌體升級及常用指令
+                <a href="/2023/08/08/GoogleAnalytics4/" rel="prev" title="Google Analytics 4（GA4）之 Hexo Next主題">
+                  <i class="fa fa-angle-left"></i> Google Analytics 4（GA4）之 Hexo Next主題
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/08/15/Gitalk/" rel="next" title="Hexo Next樣板開啟 Gitalk 留言版">
-                  Hexo Next樣板開啟 Gitalk 留言版 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -396,7 +415,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"bruce27272","repo":"bruce27272.github.io","client_id":"ad1c0d8cfe15ff96b02b","client_secret":"cba8eb9f720167e391890671cb9af185ef84d46e","admin_user":"bruce27272","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"a7ad8d2116c417d9049a9d015957ca7b"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"bruce27272","repo":"bruce27272.github.io","client_id":"ad1c0d8cfe15ff96b02b","client_secret":"cba8eb9f720167e391890671cb9af185ef84d46e","admin_user":"bruce27272","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"1407cb7bbb6d5c94670665083a14ab30"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
