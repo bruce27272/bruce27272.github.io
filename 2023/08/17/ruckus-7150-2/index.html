@@ -30,27 +30,31 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"bruce27272.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="搞了幾天，總算建立完成，第一次自行用程式的方式建立部落格，還要多多熟悉。">
+    <meta name="description" content="今日在更新時，遇到了有POE功能的ICX7150 原本以為與無POE版本更新流程相同 結果更新後卻一直出現錯誤訊息如下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一篇">
-<meta property="og:url" content="https://bruce27272.github.io/2023/08/03/website/index.html">
+<meta property="og:title" content="Brocade&#x2F;Ruckus-ICX7150 韌體升級(補充)">
+<meta property="og:url" content="https://bruce27272.github.io/2023/08/17/ruckus-7150-2/index.html">
 <meta property="og:site_name" content="美食工程師">
-<meta property="og:description" content="搞了幾天，總算建立完成，第一次自行用程式的方式建立部落格，還要多多熟悉。">
+<meta property="og:description" content="今日在更新時，遇到了有POE功能的ICX7150 原本以為與無POE版本更新流程相同 結果更新後卻一直出現錯誤訊息如下">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-08-03T01:49:23.000Z">
-<meta property="article:modified_time" content="2023-08-04T04:04:45.377Z">
+<meta property="article:published_time" content="2023-08-17T08:28:19.000Z">
+<meta property="article:modified_time" content="2023-08-17T08:42:14.120Z">
 <meta property="article:author" content="Bruce">
+<meta property="article:tag" content="Ruckus">
+<meta property="article:tag" content="韌體升級">
+<meta property="article:tag" content="ICX7150">
+<meta property="article:tag" content="Brocade">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://bruce27272.github.io/2023/08/03/website/">
+<link rel="canonical" href="https://bruce27272.github.io/2023/08/17/ruckus-7150-2/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh_TW","comments":true,"permalink":"https://bruce27272.github.io/2023/08/03/website/","path":"2023/08/03/website/","title":"第一篇"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh_TW","comments":true,"permalink":"https://bruce27272.github.io/2023/08/17/ruckus-7150-2/","path":"2023/08/17/ruckus-7150-2/","title":"Brocade/Ruckus-ICX7150 韌體升級(補充)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>第一篇 | 美食工程師</title>
+<title>Brocade/Ruckus-ICX7150 韌體升級(補充) | 美食工程師</title>
   <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G6CDTP1S08"></script>
  <script>
@@ -181,7 +185,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh_TW">
-    <link itemprop="mainEntityOfPage" href="https://bruce27272.github.io/2023/08/03/website/">
+    <link itemprop="mainEntityOfPage" href="https://bruce27272.github.io/2023/08/17/ruckus-7150-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -194,12 +198,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="第一篇 | 美食工程師">
+      <meta itemprop="name" content="Brocade/Ruckus-ICX7150 韌體升級(補充) | 美食工程師">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          第一篇
+          Brocade/Ruckus-ICX7150 韌體升級(補充)
         </h1>
 
         <div class="post-meta-container">
@@ -209,15 +213,18 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2023-08-03 09:49:23" itemprop="dateCreated datePublished" datetime="2023-08-03T09:49:23+08:00">2023-08-03</time>
+      <time title="創建時間：2023-08-17 16:28:19 / 修改時間：16:42:14" itemprop="dateCreated datePublished" datetime="2023-08-17T16:28:19+08:00">2023-08-17</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
+        <i class="far fa-folder"></i>
       </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-08-04 12:04:45" itemprop="dateModified" datetime="2023-08-04T12:04:45+08:00">2023-08-04</time>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/" itemprop="url" rel="index"><span itemprop="name">技術紀錄</span></a>
+        </span>
     </span>
 
   
@@ -236,7 +243,56 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>搞了幾天，總算建立完成，第一次自行用程式的方式建立部落格，還要多多熟悉。</p>
+    <div class="post-body" itemprop="articleBody"><p>今日在更新時，遇到了有POE功能的ICX7150</p>
+<p>原本以為與無POE版本更新流程相同</p>
+<p>結果更新後卻一直出現錯誤訊息如下</p>
+<span id="more"></span>
+
+<p><code>ICX7150#PoE Severe Error: Lost communication link with the PoE controller on unit 1 in slot 1. Shutting down and restarting the PoE module to recover.</code></p>
+<p>找了一些資料才發現在更新重啟後</p>
+<p>會進行Firmware 的 Download 安裝</p>
+<p>需安裝完成才會正常啟動POE模組</p>
+<p>本次處理方式是先將08.0.95j 降板回08.0.90d</p>
+<p>重啟後進行Firmware 的 Download 安裝</p>
+<pre><code>PoE Info: PoE FW upgrade is required. Auto upgrade will start now.    
+PoE Info: FW Download on slot 1...sending download command...    
+PoE Warning: Upgrading firmware in slot 1....DO NOT SWITCHOVER OR POWER DOWN THE UNIT.    
+PoE Info: FW Download on slot 1...resending download command...    
+PoE Info: FW Download on slot 1...TPE response received.    
+PoE Info: FW Download on slot 1...sending erase command...    
+PoE Info: FW Download on slot 1...erase command...accepted.    
+PoE Info: FW Download on slot 1...erasing firmware memory...    
+PoE Info: FW Download on slot 1...erasing firmware memory...completed    
+PoE Info: FW Download on slot 1...sending program command...    
+PoE Info: FW Download on slot 1...sending program command...accepted.    
+PoE Info: FW Download on slot 1...programming firmware...takes around 5 minutes....    
+U1-MSG: PoE Info: Firmware Download on slot 1.....10 percent completed.    
+U1-MSG: PoE Info: Firmware Download on slot 1.....20 percent completed.    
+U1-MSG: PoE Info: Firmware Download on slot 1.....30 percent completed.    
+U1-MSG: PoE Info: Firmware Download on slot 1.....40 percent completed.    
+U1-MSG: PoE Info: Firmware Download on slot 1.....50 percent completed.    
+U1-MSG: PoE Info: Firmware Download on slot 1.....60 percent completed.    
+U1-MSG: PoE Info: Firmware Download on slot 1.....70 percent completed.    
+U1-MSG: PoE Info: Firmware Download on slot 1.....80 percent completed.    
+U1-MSG: PoE Info: Firmware Download on slot 1.....90 percent completed.    
+U1-MSG: PoE Info: Firmware Download on slot 1.....100 percent completed.    
+PoE Info: FW Download on slot 1...programming firmware...completed.    
+PoE Info: FW Download on slot 1...upgrading firmware...completed. Module will be reset.    
+PoE Info: Resetting in slot 1....    
+PoE Info: Resetting module in slot 1....completed.    
+PoE Info: Programming Ruckus defaults.....    
+PoE Info: Programming Ruckus defaults. Step 1: Writing port defaults on module in slot 1....    
+PoE Info: Programming Ruckus Defaults: Step 2: Writing PM defaults on module in slot 1.    
+PoE Info: Programming Ruckus defaults. Step 3: Writing user byte 0xf7 on module in slot 1.    
+PoE Info: Programming Ruckus defaults. Step 4: Saving settings on module in slot 1.    
+PoE Info: Programming Ruckus defaults....completed.    
+PoE Info: PoE module 1 of Unit 1 on ports 1/1/1 to 1/1/24 detected. Initializing....    
+PoE Info: PoE module 1 of Unit 1 initialization is done.    
+</code></pre>
+<p>耐心等待上面跑完後即無出現錯誤訊息</p>
+<p>再循流程更新至08.0.95j</p>
+<p>更新重啟後會再跑Firmware 的 Download 安裝</p>
+<p>跑完後即完成更新也無錯誤訊息</p>
 
     </div>
 
@@ -245,16 +301,22 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Ruckus/" rel="tag"># Ruckus</a>
+              <a href="/tags/%E9%9F%8C%E9%AB%94%E5%8D%87%E7%B4%9A/" rel="tag"># 韌體升級</a>
+              <a href="/tags/ICX7150/" rel="tag"># ICX7150</a>
+              <a href="/tags/Brocade/" rel="tag"># Brocade</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
+                <a href="/2023/08/15/Gitalk/" rel="prev" title="Hexo Next樣板開啟 Gitalk 留言版">
+                  <i class="fa fa-angle-left"></i> Hexo Next樣板開啟 Gitalk 留言版
+                </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/08/04/ruckus-7150/" rel="next" title="Brocade/Ruckus-ICX7150 韌體升級及常用指令">
-                  Brocade/Ruckus-ICX7150 韌體升級及常用指令 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -335,7 +397,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"bruce27272","repo":"bruce27272.github.io","client_id":"ad1c0d8cfe15ff96b02b","client_secret":"cba8eb9f720167e391890671cb9af185ef84d46e","admin_user":"bruce27272","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"abecc322363a06a00f235f93699587be"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"bruce27272","repo":"bruce27272.github.io","client_id":"ad1c0d8cfe15ff96b02b","client_secret":"cba8eb9f720167e391890671cb9af185ef84d46e","admin_user":"bruce27272","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"3387390bc19dc74144bf5a25d6a8aa11"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
