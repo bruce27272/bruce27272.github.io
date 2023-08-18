@@ -6,7 +6,7 @@
   <link href="https://bruce27272.github.io/atom.xml" rel="self"/>
   
   <link href="https://bruce27272.github.io/"/>
-  <updated>2023-08-17T08:42:14.120Z</updated>
+  <updated>2023-08-18T06:06:30.527Z</updated>
   <id>https://bruce27272.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://bruce27272.github.io/2023/08/17/ruckus-7150-2/"/>
     <id>https://bruce27272.github.io/2023/08/17/ruckus-7150-2/</id>
     <published>2023-08-17T08:28:19.000Z</published>
-    <updated>2023-08-17T08:42:14.120Z</updated>
+    <updated>2023-08-18T06:06:30.527Z</updated>
     
     <content type="html"><![CDATA[<p>今日在更新時，遇到了有POE功能的ICX7150</p><p>原本以為與無POE版本更新流程相同</p><p>結果更新後卻一直出現錯誤訊息如下</p><span id="more"></span><p><code>ICX7150#PoE Severe Error: Lost communication link with the PoE controller on unit 1 in slot 1. Shutting down and restarting the PoE module to recover.</code></p><p>找了一些資料才發現在更新重啟後</p><p>會進行Firmware 的 Download 安裝</p><p>需安裝完成才會正常啟動POE模組</p><p>本次處理方式是先將08.0.95j 降板回08.0.90d</p><p>重啟後進行Firmware 的 Download 安裝</p><pre><code>PoE Info: PoE FW upgrade is required. Auto upgrade will start now.    PoE Info: FW Download on slot 1...sending download command...    PoE Warning: Upgrading firmware in slot 1....DO NOT SWITCHOVER OR POWER DOWN THE UNIT.    PoE Info: FW Download on slot 1...resending download command...    PoE Info: FW Download on slot 1...TPE response received.    PoE Info: FW Download on slot 1...sending erase command...    PoE Info: FW Download on slot 1...erase command...accepted.    PoE Info: FW Download on slot 1...erasing firmware memory...    PoE Info: FW Download on slot 1...erasing firmware memory...completed    PoE Info: FW Download on slot 1...sending program command...    PoE Info: FW Download on slot 1...sending program command...accepted.    PoE Info: FW Download on slot 1...programming firmware...takes around 5 minutes....    U1-MSG: PoE Info: Firmware Download on slot 1.....10 percent completed.    U1-MSG: PoE Info: Firmware Download on slot 1.....20 percent completed.    U1-MSG: PoE Info: Firmware Download on slot 1.....30 percent completed.    U1-MSG: PoE Info: Firmware Download on slot 1.....40 percent completed.    U1-MSG: PoE Info: Firmware Download on slot 1.....50 percent completed.    U1-MSG: PoE Info: Firmware Download on slot 1.....60 percent completed.    U1-MSG: PoE Info: Firmware Download on slot 1.....70 percent completed.    U1-MSG: PoE Info: Firmware Download on slot 1.....80 percent completed.    U1-MSG: PoE Info: Firmware Download on slot 1.....90 percent completed.    U1-MSG: PoE Info: Firmware Download on slot 1.....100 percent completed.    PoE Info: FW Download on slot 1...programming firmware...completed.    PoE Info: FW Download on slot 1...upgrading firmware...completed. Module will be reset.    PoE Info: Resetting in slot 1....    PoE Info: Resetting module in slot 1....completed.    PoE Info: Programming Ruckus defaults.....    PoE Info: Programming Ruckus defaults. Step 1: Writing port defaults on module in slot 1....    PoE Info: Programming Ruckus Defaults: Step 2: Writing PM defaults on module in slot 1.    PoE Info: Programming Ruckus defaults. Step 3: Writing user byte 0xf7 on module in slot 1.    PoE Info: Programming Ruckus defaults. Step 4: Saving settings on module in slot 1.    PoE Info: Programming Ruckus defaults....completed.    PoE Info: PoE module 1 of Unit 1 on ports 1/1/1 to 1/1/24 detected. Initializing....    PoE Info: PoE module 1 of Unit 1 initialization is done.    </code></pre><p>耐心等待上面跑完後即無出現錯誤訊息</p><p>再循流程更新至08.0.95j</p><p>更新重啟後會再跑Firmware 的 Download 安裝</p><p>跑完後即完成更新也無錯誤訊息</p>]]></content>
     
@@ -33,6 +33,8 @@
     
     
     <category term="技術紀錄" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/"/>
+    
+    <category term="Network" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Network/"/>
     
     
     <category term="Ruckus" scheme="https://bruce27272.github.io/tags/Ruckus/"/>
@@ -50,7 +52,7 @@
     <link href="https://bruce27272.github.io/2023/08/15/Gitalk/"/>
     <id>https://bruce27272.github.io/2023/08/15/Gitalk/</id>
     <published>2023-08-15T06:21:15.000Z</published>
-    <updated>2023-08-15T07:30:45.628Z</updated>
+    <updated>2023-08-18T06:06:35.558Z</updated>
     
     <content type="html"><![CDATA[<p>今天試著幫我的部落格新增留言板</p><p>看了一些資料</p><p>蠻多人都是搭配Disqus</p><p>但有些人反映會收不到訊息</p><p>所以我採用Gitalk</p><p>Gitalk 是一個基于 GitHub Issue所開發的留言版套件</p><span id="more"></span><p>首先建立 GitHub OAuth APP</p><p>由於要使用 Gitalk 必須有 GitHub OAuth</p><p>所以先開啟 GitHub之後到 Setting</p><p><img src="/2023/08/15/Gitalk/1.PNG" alt="Setting"></p><p>接下來選擇 Developer settings</p><p><img src="/2023/08/15/Gitalk/2.PNG" alt="Developer"></p><p>然後點 OAuth Apps</p><p><img src="/2023/08/15/Gitalk/3.PNG" alt="OAuth"></p><p>未建立過OAuh 點Register a new application</p><p><img src="/2023/08/15/Gitalk/4.PNG" alt="Register a new application"></p><p>接下來依照欄位填寫即可</p><pre><code>Application name - 應用程式名稱    Homepage URL - 應用程式網域 → 填部落格網址    Application description - 應用程式描述    Authorization callback URL - 授權回應網址 → 填部落格網址    </code></pre><p>參考如下</p><p><img src="/2023/08/15/Gitalk/5.PNG" alt="欄位"></p><p>申請完之後你就會獲得這兩組 ID (Client ID、Client Secret)</p><p>請先複製起來，稍後會使用到</p><p><img src="/2023/08/15/Gitalk/6.PNG" alt="key"></p><p>接下來就開啟 Next 佈景主題的 _config.yml</p><p>然後找到「Gitalk」的地方</p><p>就可以看到相關設定</p><p>依照欄位填入即可</p><p><img src="/2023/08/15/Gitalk/7.PNG" alt="next"></p><pre><code>enable: true    github_id:  # GitHub 作者帳號    repo: hsiangfeng.github.io # Repo 名稱，通常就是網域    client_id: xxxxxxxx # 剛申請的 Client ID    client_secret: xxxxxxxx # 剛申請的 Client Secret    admin_user: hsiangfeng # 管理者的帳號    distraction_free_mode: true # 無干擾模式    language: zh-TW ## 語系    </code></pre><p>接下來只需要部屬就可以看到留言版開啟了</p><p>此外第一次使用會需要啟用 OAuth</p><p>只需要到任一篇文章內點一下啟用即可</p><p><img src="/2023/08/15/Gitalk/8.PNG" alt="啟用"></p><p>只要有人在你的 Gitalk 留言時 Gitalk 就會在你的 GitHub repo 上開啟一個 issues</p><p>此外可以增加設定增加一行 labels 來做一下分類方便管理</p><pre><code>enable: true    github_id:  # GitHub 作者帳號    repo: hsiangfeng.github.io # Repo 名稱，通常就是網域    client_id: xxxxxxxx # 剛申請的 Client ID    client_secret: xxxxxxxx # 剛申請的 Client Secret    admin_user: hsiangfeng # 管理者的帳號    distraction_free_mode: true # 無干擾模式    language: zh-TW ## 語系    labels: Gitalk    </code></pre><p>最後Gitalk 留言版套件可以使用 MD 格式同時支援高亮的</p><p>只要使用高亮的語法可以產生不同的效果</p>]]></content>
     
@@ -66,10 +68,12 @@
     
     <category term="技術紀錄" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/"/>
     
+    <category term="Web" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Web/"/>
     
-    <category term="Gitalk" scheme="https://bruce27272.github.io/tags/Gitalk/"/>
     
     <category term="Hexo" scheme="https://bruce27272.github.io/tags/Hexo/"/>
+    
+    <category term="Gitalk" scheme="https://bruce27272.github.io/tags/Gitalk/"/>
     
     <category term="Git" scheme="https://bruce27272.github.io/tags/Git/"/>
     
@@ -80,7 +84,7 @@
     <link href="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/"/>
     <id>https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/</id>
     <published>2023-08-08T10:52:23.000Z</published>
-    <updated>2023-08-14T08:59:29.097Z</updated>
+    <updated>2023-08-18T06:06:32.881Z</updated>
     
     <content type="html"><![CDATA[<p>在建立網站後，想說要運用Google Analytics來觀察瀏覽人數</p><p>找了一些資料後，發現Google Analytics於2023年7月開始要使用Google Analytics 4(GA4)來設定</p><p>目前我使用的Next主題需要做些調整才能順利抓取數據</p><p>很久以前有用過Google Analytics 但已經忘記如何申請</p><p>就重新申請並藉由這次做個紀錄</p><span id="more"></span><p><img src="/2023/08/08/GoogleAnalytics4/1.PNG" alt="建立帳戶"></p><p><img src="/2023/08/08/GoogleAnalytics4/2.PNG" alt="建立屬性"></p><p><img src="/2023/08/08/GoogleAnalytics4/3.PNG" alt="設定商家"></p><p><img src="/2023/08/08/GoogleAnalytics4/4.PNG" alt="選擇目標"></p><p><img src="/2023/08/08/GoogleAnalytics4/7.png" alt="接受服務條款"></p><p>在輸入串流網址後，在完成建立後可以看到串流ID跟評估ID</p><p><img src="/2023/08/08/GoogleAnalytics4/5.PNG" alt="完成建立"></p><p>接著找到需加入的程式碼，複製以下程式碼</p><p><img src="/2023/08/08/GoogleAnalytics4/6.PNG" alt="程式碼"></p><p>接著要註解掉主题配置文件中代碼及追踪ID</p><p>檔案位置 &#x2F;themes&#x2F;next&#x2F;_config.yml</p><p><code># Google Analytics</code><br><code>#google_analytics: xxxxxx</code></p><p>更改主題文件google-analytics.njk</p><p>檔案位置 &#x2F;themes&#x2F;next&#x2F;layout&#x2F;_third-party&#x2F;analytics&#x2F;google-analytics.njk</p><p>原本的程式碼，建議先備份</p><pre><code>&#123;%- if theme.google_analytics.tracking_id %&#125;      &#123;%- if not theme.google_analytics.only_pageview %&#125;       &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=&#123;&#123; theme.google_analytics.tracking_id &#125;&#125;&quot;&gt;&lt;/script&gt;      &#123;%- endif %&#125;     &#123;&#123; next_data('google_analytics', theme.google_analytics) &#125;&#125;     &#123;&#123; next_js('third-party/analytics/google-analytics.js') &#125;&#125;    &#123;%- endif %&#125;    </code></pre><p>然後貼上剛剛複製的程式碼，如下圖</p><p><img src="/2023/08/08/GoogleAnalytics4/8.PNG" alt="程式碼2"></p><p>接著回到Google Analytics主控台就可以看到資料已收集</p>]]></content>
     
@@ -95,10 +99,12 @@
     
     <category term="技術紀錄" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/"/>
     
+    <category term="Web" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Web/"/>
     
-    <category term="Hexo" scheme="https://bruce27272.github.io/tags/Hexo/"/>
     
     <category term="Google Analytics" scheme="https://bruce27272.github.io/tags/Google-Analytics/"/>
+    
+    <category term="Hexo" scheme="https://bruce27272.github.io/tags/Hexo/"/>
     
     <category term="Hexo Next" scheme="https://bruce27272.github.io/tags/Hexo-Next/"/>
     
@@ -109,7 +115,7 @@
     <link href="https://bruce27272.github.io/2023/08/04/ruckus-7150/"/>
     <id>https://bruce27272.github.io/2023/08/04/ruckus-7150/</id>
     <published>2023-08-04T03:43:13.000Z</published>
-    <updated>2023-08-07T08:31:34.183Z</updated>
+    <updated>2023-08-18T06:06:28.469Z</updated>
     
     <content type="html"><![CDATA[<p>正式的第一篇文章!!</p><p>最近工作上要將公司內用的Edge端交換器進行韌體更新</p><p>前一份工作沒碰過Ruckus的交換器</p><p>公司採用的是Brocade&#x2F;Ruckus ICX-7150</p><p>找了一些資訊及供應商提供的韌體升級指令，就做點紀錄</p><p>本次要升級至目前最新版本08.0.95j版本</p><p>因目前交換器版本較舊為08.0.61b</p><p>升級會分2次升級，因08.0.95j為UFI韌體版本</p><p>UFI版本具供應商指出，為包含韌體及boot檔</p><p>與之前non-UFI版本為韌體及boot檔分開版本不同</p><p>因08.0.61b版本過舊，需先升級為08.0.90版本作為跳版再升級為08.0.95j</p><span id="more"></span><p>以下為原本升級計畫的更新指令</p><p>#升級 90d</p><p>插入隨身碟</p><p><code> #mount disk0</code><br><code> #copy disk0 flash SPS08090d.bin secondary</code><br><code> #copy disk0 flash SPS08090d.bin primary</code><br><code> #copy disk0 flash mnz10115.bin bootrom</code></p><p><code>#conf t</code><br><code>#boot system flash primary</code><br><code>#end</code><br><code>#wr me</code><br><code>#reload</code></p><p>#升級 95j</p><p><code>#mount disk0</code><br><code>#copy disk0 flash SPS08095jufi.bin secondary</code><br><code>#copy disk0 flash SPS08095jufi.bin primary</code></p><p><code>#reload</code><br><code>#y</code></p><p>降韌體</p><p>按b 進入底層</p><p><code>#printenv</code></p><p>將本機IP設定為server ip</p><p><code>#setenv image_name SPS08090d.bin</code><br><code>#setenv uboot mnz10115.bin</code><br><code>#update_primary</code><br><code>#update_secondary</code><br><code>#update_uboot    (會置換uboot partition 2)</code><br><code>#boot_primary</code><br><code>#reset</code></p><p>重開後 按b 進入底層</p><p><code>#update_uboot (會置換uboot partition 1) </code><br><code>#reset</code></p><p>但實際更新時發現61版的韌體不知是否有Bug</p><p>在放入90d的韌體，下指令重啟後，會陷入無限重啟的迴圈內，</p><p>進入底層發現</p><p>bootimge 還是在61版</p><p>所以要使用TFTP的方式，將90d及uboot檔案放入來進行更新(即使用原先要降韌體的方式)</p><p>順利更新至90d後 即可採正常方式更新至95j</p><p>以下為ICX-7150常用指令，Ruckus交換器應該通用</p><p>設定Switch的設備名稱：<br><code>#configure terminal</code><br><code>#hostname ruckusswitch</code></p><p>設定IP及預設閘道：<br><code>#configure terminal</code><br><code>#ip address 10.7.7.239 255.255.255.0</code><br><code>#ip default-gateway 10.7.7.254</code></p><p>設定telnet連線登入密碼：<br><code>#configure terminal</code><br><code>#enable telnet password Pw123456</code></p><p>設定Enable密碼：<br><code>#configure terminal</code><br><code>#enable super-user-password Pw123456</code></p><p>備份設定檔案至TFTP Server：<br><code>#copy startup-config tftp 192.168.1.1 test.cfg</code></p><p>還原設定檔至Switch開機設定檔：<br><code>#copy tftp startup-config 192.168.1.1 test.cfg</code></p><p>關閉web管理功能：<br><code>#configure terminal</code><br><code>#no web-management http</code></p><p>設定網路校時功能(假設NTP Server IP為192.168.100.100)：<br><code>#configure terminal</code><br><code>#clock timezone gmt GMT+08</code><br><code>#ntp</code><br><code>#server 192.168.100.100</code></p><p>查詢Switch目前的韌體版本：<br><code>#show flash</code></p><p>查詢Switch設備序號：<br><code>#show version</code></p><p>重新開機：<br><code>#reload</code></p><p>儲存Switch設定：<br><code>#write memory</code></p><p>啟動10G介面：<br><code>#license install perpetual 1 4x10gr</code><br>授權詢問選”Y”<br><code>#configure terminal</code><br><code>#interface ethernet 1/3/1 to 1/3/4</code><br><code>#speed-duplex 10g-full</code></p><p>查看mini gbic是否有正常啟動：<br><code>#show media</code></p><p>關閉頁面顯示分頁功能(Disable page display mode)：<br><code>#skip</code></p><p>啟動頁面顯示分頁功能(Enable page display mode)：<br><code>#page</code></p><p>查詢Switch Port狀態：<br><code>#show interfaces brief</code></p><p>設定介面啟動底層迴圈偵測功能(loop detection)：<br><code>#configure terminal</code><br><code>#interface ethernet 1/1/1</code><br><code>#loop-detection</code></p><p>顯示目前底層迴圈偵測狀態：<br><code>#show loop-detection status</code></p><p>解除底層迴圈封鎖狀態：<br><code>#clear loop-detection</code></p><p>顯示時取消分頁顯示：<br><code>#skip</code></p><p>顯示時使用分頁顯示：<br><code>#page</code></p>]]></content>
     
@@ -130,6 +136,8 @@
     
     <category term="技術紀錄" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/"/>
     
+    <category term="Network" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Network/"/>
+    
     
     <category term="Ruckus" scheme="https://bruce27272.github.io/tags/Ruckus/"/>
     
@@ -146,7 +154,7 @@
     <link href="https://bruce27272.github.io/2023/08/03/website/"/>
     <id>https://bruce27272.github.io/2023/08/03/website/</id>
     <published>2023-08-03T01:49:23.000Z</published>
-    <updated>2023-08-04T04:04:45.377Z</updated>
+    <updated>2023-08-18T06:06:37.397Z</updated>
     
     <content type="html"><![CDATA[<p>搞了幾天，總算建立完成，第一次自行用程式的方式建立部落格，還要多多熟悉。</p>]]></content>
     
