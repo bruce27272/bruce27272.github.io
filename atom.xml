@@ -6,7 +6,7 @@
   <link href="https://bruce27272.github.io/atom.xml" rel="self"/>
   
   <link href="https://bruce27272.github.io/"/>
-  <updated>2023-08-18T06:06:30.527Z</updated>
+  <updated>2023-08-24T01:49:41.486Z</updated>
   <id>https://bruce27272.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>TFTP Server韌體更新、設定檔備份用軟體(Tftpd64)</title>
+    <link href="https://bruce27272.github.io/2023/08/24/tftp/"/>
+    <id>https://bruce27272.github.io/2023/08/24/tftp/</id>
+    <published>2023-08-24T01:27:13.000Z</published>
+    <updated>2023-08-24T01:49:41.486Z</updated>
+    
+    <content type="html"><![CDATA[<p>維護網路設備會遇到「設定備份」或「軟體更新」</p><p>最近在更新ICX-7150時也有使用到</p><p>雖然現在的設備都可以使用Web介面來進行這些動作</p><p>但透過指令模式搭配TFTP Server來進行</p><p>相當適合大量設備維護時使用</p><span id="more"></span><p>在使用Tftp時常會使用到Tftpd64這套軟體</p><p>tftpd64是一套20多年的opensource 軟體</p><p>原先為tftp32做為開端</p><p>後續增加了tftp64</p><p>除了TFTP相關功能外</p><p>也包含了DHCP、DNS、SNTP、Syslog等功能</p><p>32位元最新版本為：v4.62<br>64位元最新版本為：v4.64<br>portable edition：為免安裝版本<br>service edition：為安裝成伺服器服務的版本</p><p>在安裝開啟後</p><p>點選「Settings」進行軟體設定</p><p><img src="/2023/08/24/tftp/1.PNG" alt="Setting"></p><p>Current Directory：為Tftp Server目前提供檔案傳輸的目錄<br>Server interface：為目前提供Tftp服務的網路介面卡IP<br>點選「Show Dir」可以瀏覽目前目錄下有哪些檔案</p><p>在「GLOBAL」全區設定畫面可以挑選要啟用的服務項目<br>通常都只作為tftp server來傳輸檔案，所以只勾選TFTP Server</p><p><img src="/2023/08/24/tftp/2.PNG" alt="Setting"></p><p>接著在TFTP頁面設定「Base Directory」目錄<br>將路徑設定在想要進行檔案傳輸的目錄</p><p><img src="/2023/08/24/tftp/4.PNG" alt="Setting"></p><p>回到主畫面後點選「Show Dir」確認一下檔案列表中是否為想要傳輸的檔案<br>如果沒問題就可以開始透過TFTP Server服務來上傳或下傳檔案<br>但路徑如有錯誤請重新選擇正確的目錄</p><p><img src="/2023/08/24/tftp/3.PNG" alt="Setting"></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;維護網路設備會遇到「設定備份」或「軟體更新」&lt;/p&gt;
+&lt;p&gt;最近在更新ICX-7150時也有使用到&lt;/p&gt;
+&lt;p&gt;雖然現在的設備都可以使用Web介面來進行這些動作&lt;/p&gt;
+&lt;p&gt;但透過指令模式搭配TFTP Server來進行&lt;/p&gt;
+&lt;p&gt;相當適合大量設備維護時使用&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技術紀錄" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/"/>
+    
+    <category term="Network" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Network/"/>
+    
+    
+    <category term="Tools" scheme="https://bruce27272.github.io/tags/Tools/"/>
+    
+    <category term="Network" scheme="https://bruce27272.github.io/tags/Network/"/>
+    
+  </entry>
   
   <entry>
     <title>Brocade/Ruckus-ICX7150 韌體升級(補充)</title>
@@ -71,9 +100,9 @@
     <category term="Web" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Web/"/>
     
     
-    <category term="Gitalk" scheme="https://bruce27272.github.io/tags/Gitalk/"/>
-    
     <category term="Hexo" scheme="https://bruce27272.github.io/tags/Hexo/"/>
+    
+    <category term="Gitalk" scheme="https://bruce27272.github.io/tags/Gitalk/"/>
     
     <category term="Git" scheme="https://bruce27272.github.io/tags/Git/"/>
     
@@ -102,9 +131,9 @@
     <category term="Web" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Web/"/>
     
     
-    <category term="Hexo" scheme="https://bruce27272.github.io/tags/Hexo/"/>
-    
     <category term="Google Analytics" scheme="https://bruce27272.github.io/tags/Google-Analytics/"/>
+    
+    <category term="Hexo" scheme="https://bruce27272.github.io/tags/Hexo/"/>
     
     <category term="Hexo Next" scheme="https://bruce27272.github.io/tags/Hexo-Next/"/>
     

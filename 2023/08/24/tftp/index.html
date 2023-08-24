@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh_TW">
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
@@ -30,23 +30,34 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"bruce27272.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="美食工程師">
-<meta property="og:url" content="https://bruce27272.github.io/tags/ICX7150/index.html">
+    <meta name="description" content="維護網路設備會遇到「設定備份」或「軟體更新」 最近在更新ICX-7150時也有使用到 雖然現在的設備都可以使用Web介面來進行這些動作 但透過指令模式搭配TFTP Server來進行 相當適合大量設備維護時使用">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TFTP Server韌體更新、設定檔備份用軟體(Tftpd64)">
+<meta property="og:url" content="https://bruce27272.github.io/2023/08/24/tftp/index.html">
 <meta property="og:site_name" content="美食工程師">
+<meta property="og:description" content="維護網路設備會遇到「設定備份」或「軟體更新」 最近在更新ICX-7150時也有使用到 雖然現在的設備都可以使用Web介面來進行這些動作 但透過指令模式搭配TFTP Server來進行 相當適合大量設備維護時使用">
 <meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://bruce27272.github.io/2023/08/24/tftp/1.PNG">
+<meta property="og:image" content="https://bruce27272.github.io/2023/08/24/tftp/2.PNG">
+<meta property="og:image" content="https://bruce27272.github.io/2023/08/24/tftp/4.PNG">
+<meta property="og:image" content="https://bruce27272.github.io/2023/08/24/tftp/3.PNG">
+<meta property="article:published_time" content="2023-08-24T01:27:13.000Z">
+<meta property="article:modified_time" content="2023-08-24T01:49:41.486Z">
 <meta property="article:author" content="Bruce">
+<meta property="article:tag" content="Tools">
+<meta property="article:tag" content="Network">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://bruce27272.github.io/2023/08/24/tftp/1.PNG">
 
 
-<link rel="canonical" href="https://bruce27272.github.io/tags/ICX7150/">
+<link rel="canonical" href="https://bruce27272.github.io/2023/08/24/tftp/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":false,"lang":"zh-TW","comments":"","permalink":"","path":"tags/ICX7150/index.html","title":""}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh_TW","comments":true,"permalink":"https://bruce27272.github.io/2023/08/24/tftp/","path":"2023/08/24/tftp/","title":"TFTP Server韌體更新、設定檔備份用軟體(Tftpd64)"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>標籤: ICX7150 | 美食工程師</title>
+<title>TFTP Server韌體更新、設定檔備份用軟體(Tftpd64) | 美食工程師</title>
   <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G6CDTP1S08"></script>
  <script>
@@ -166,74 +177,137 @@
 
     </div>
 
-    <div class="main-inner tag posts-collapse">
+    <div class="main-inner post posts-expand">
 
 
   
+
+
+<div class="post-block">
   
   
-  <div class="post-block">
-    <div class="post-content">
-      <div class="collection-title">
-        <h1 class="collection-header">ICX7150
-          <small>標籤</small>
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh_TW">
+    <link itemprop="mainEntityOfPage" href="https://bruce27272.github.io/2023/08/24/tftp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Bruce">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="美食工程師">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="TFTP Server韌體更新、設定檔備份用軟體(Tftpd64) | 美食工程師">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          TFTP Server韌體更新、設定檔備份用軟體(Tftpd64)
         </h1>
-      </div>
 
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">發表於</span>
       
-    <div class="collection-year">
-      <span class="collection-header">2023</span>
+
+      <time title="創建時間：2023-08-24 09:27:13 / 修改時間：09:49:41" itemprop="dateCreated datePublished" datetime="2023-08-24T09:27:13+08:00">2023-08-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分類於</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/" itemprop="url" rel="index"><span itemprop="name">技術紀錄</span></a>
+        </span>
+          ，
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+        </span>
+    </span>
+
+  
+    <span class="post-meta-item" title="閱讀次數" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="eye"></i>
+      </span>
+      <span class="post-meta-item-text">閱讀次數：</span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><p>維護網路設備會遇到「設定備份」或「軟體更新」</p>
+<p>最近在更新ICX-7150時也有使用到</p>
+<p>雖然現在的設備都可以使用Web介面來進行這些動作</p>
+<p>但透過指令模式搭配TFTP Server來進行</p>
+<p>相當適合大量設備維護時使用</p>
+<span id="more"></span>
+
+<p>在使用Tftp時常會使用到Tftpd64這套軟體</p>
+<p>tftpd64是一套20多年的opensource 軟體</p>
+<p>原先為tftp32做為開端</p>
+<p>後續增加了tftp64</p>
+<p>除了TFTP相關功能外</p>
+<p>也包含了DHCP、DNS、SNTP、Syslog等功能</p>
+<p>32位元最新版本為：v4.62<br>64位元最新版本為：v4.64<br>portable edition：為免安裝版本<br>service edition：為安裝成伺服器服務的版本</p>
+<p>在安裝開啟後</p>
+<p>點選「Settings」進行軟體設定</p>
+<p><img src="/2023/08/24/tftp/1.PNG" alt="Setting"></p>
+<p>Current Directory：為Tftp Server目前提供檔案傳輸的目錄<br>Server interface：為目前提供Tftp服務的網路介面卡IP<br>點選「Show Dir」可以瀏覽目前目錄下有哪些檔案</p>
+<p>在「GLOBAL」全區設定畫面可以挑選要啟用的服務項目<br>通常都只作為tftp server來傳輸檔案，所以只勾選TFTP Server</p>
+<p><img src="/2023/08/24/tftp/2.PNG" alt="Setting"></p>
+<p>接著在TFTP頁面設定「Base Directory」目錄<br>將路徑設定在想要進行檔案傳輸的目錄</p>
+<p><img src="/2023/08/24/tftp/4.PNG" alt="Setting"></p>
+<p>回到主畫面後點選「Show Dir」確認一下檔案列表中是否為想要傳輸的檔案<br>如果沒問題就可以開始透過TFTP Server服務來上傳或下傳檔案<br>但路徑如有錯誤請重新選擇正確的目錄</p>
+<p><img src="/2023/08/24/tftp/3.PNG" alt="Setting"></p>
+
     </div>
-    <div class="collection-month">
-      <span class="collection-header">8月</span>
-    </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-08-17T16:28:19+08:00"
-              content="2023-08-17">
-          08-17
-        </time>
-      </div>
+    
+    
+    
 
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/08/17/ruckus-7150-2/" itemprop="url">
-          <span itemprop="name">Brocade/Ruckus-ICX7150 韌體升級(補充)</span>
-        </a>
-      </div>
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Tools/" rel="tag"># Tools</a>
+              <a href="/tags/Network/" rel="tag"># Network</a>
+          </div>
 
-      
-    </header>
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/08/17/ruckus-7150-2/" rel="prev" title="Brocade/Ruckus-ICX7150 韌體升級(補充)">
+                  <i class="fa fa-angle-left"></i> Brocade/Ruckus-ICX7150 韌體升級(補充)
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
   </article>
+</div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <div class="post-meta-container">
-        <time itemprop="dateCreated"
-              datetime="2023-08-04T11:43:13+08:00"
-              content="2023-08-04">
-          08-04
-        </time>
-      </div>
 
-      <div class="post-title">
-        <a class="post-title-link" href="/2023/08/04/ruckus-7150/" itemprop="url">
-          <span itemprop="name">Brocade/Ruckus-ICX7150 韌體升級及常用指令</span>
-        </a>
-      </div>
 
-      
-    </header>
-  </article>
 
-    </div>
-  </div>
-  
-  
-  
 
+
+    <div class="comments gitalk-container"></div>
 </div>
   </main>
 
@@ -303,7 +377,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"bruce27272","repo":"bruce27272.github.io","client_id":"ad1c0d8cfe15ff96b02b","client_secret":"cba8eb9f720167e391890671cb9af185ef84d46e","admin_user":"bruce27272","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"83b810b7c75f63ca7ddb4878d71347bc"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"bruce27272","repo":"bruce27272.github.io","client_id":"ad1c0d8cfe15ff96b02b","client_secret":"cba8eb9f720167e391890671cb9af185ef84d46e","admin_user":"bruce27272","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"81107d8c4bec0d596d6b457e4739b882"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
