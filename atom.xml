@@ -6,7 +6,7 @@
   <link href="https://bruce27272.github.io/atom.xml" rel="self"/>
   
   <link href="https://bruce27272.github.io/"/>
-  <updated>2023-08-24T01:49:41.486Z</updated>
+  <updated>2023-09-07T02:52:23.054Z</updated>
   <id>https://bruce27272.github.io/</id>
   
   <author>
@@ -15,6 +15,41 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows Server 關閉TLS 1.1以下版本</title>
+    <link href="https://bruce27272.github.io/2023/09/07/tls/"/>
+    <id>https://bruce27272.github.io/2023/09/07/tls/</id>
+    <published>2023-09-07T02:10:14.000Z</published>
+    <updated>2023-09-07T02:52:23.054Z</updated>
+    
+    <content type="html"><![CDATA[<p>Transport Layer Security (TLS) 是一種廣泛採用的安全通訊協定</p><p>目的為提升網際網路通訊的私密性和資料安全性</p><p>TLS 的主要用例是對 web 應用程式和伺服器之間的通訊進行加密</p><p>TLS 還可以用於加密其他通訊，如電子郵件、資料傳遞…等</p><p>目前所推出的最新版本為TLS 1.3</p><p>由於TLS 1.1以下版本具有不安全性的漏洞</p><p>目前許多網站已停用TLS 1.1以下版本(包含舊版SSL)</p><span id="more"></span><p>在Windows Server 上關閉TLS 1.1以下版本</p><p>只需新增機碼即可完成關閉作業</p><p>於執行中輸入regedit開啟登陸編輯程式</p><p>於 \HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols</p><p>新增機碼TLS 1.1 →新增機碼Client、Server</p><p>分別於Client、Server新增DWORD→(1)名稱：DisabledByDefault、數值資料：1 (2)名稱：Enabled、數值資料：0</p><p>如下圖</p><p><img src="/2023/09/07/tls/1.PNG" alt="Setting"></p><p>或是使用記事本建立reg檔案來新增</p><p>首先建立空白記事本新增以下內容並另存為附檔名.reg</p><p>SSL 3.0</p><pre><code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0]    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Client]    &quot;Enabled&quot;=dword:00000000    &quot;DisabledByDefault&quot;=dword:00000001    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Server]    &quot;Enabled&quot;=dword:00000000    &quot;DisabledByDefault&quot;=dword:00000001    </code></pre><p>TLS 1.0</p><pre><code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0]    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Client]    &quot;Enabled&quot;=dword:00000000    &quot;DisabledByDefault&quot;=dword:00000001    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server]    &quot;Enabled&quot;=dword:00000000    &quot;DisabledByDefault&quot;=dword:00000001    </code></pre><p>TLS 1.1</p><pre><code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1]    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Client]    &quot;Enabled&quot;=dword:00000000    &quot;DisabledByDefault&quot;=dword:00000001    [HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server]    &quot;Enabled&quot;=dword:00000000    &quot;DisabledByDefault&quot;=dword:00000001    </code></pre><p>如下圖</p><p><img src="/2023/09/07/tls/2.PNG" alt="Setting"></p><p>建立後直接執行即可新增機碼</p><p><img src="/2023/09/07/tls/3.PNG" alt="Setting"></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Transport Layer Security (TLS) 是一種廣泛採用的安全通訊協定&lt;/p&gt;
+&lt;p&gt;目的為提升網際網路通訊的私密性和資料安全性&lt;/p&gt;
+&lt;p&gt;TLS 的主要用例是對 web 應用程式和伺服器之間的通訊進行加密&lt;/p&gt;
+&lt;p&gt;TLS 還可以用於加密其他通訊，如電子郵件、資料傳遞…等&lt;/p&gt;
+&lt;p&gt;目前所推出的最新版本為TLS 1.3&lt;/p&gt;
+&lt;p&gt;由於TLS 1.1以下版本具有不安全性的漏洞&lt;/p&gt;
+&lt;p&gt;目前許多網站已停用TLS 1.1以下版本(包含舊版SSL)&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="技術紀錄" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/"/>
+    
+    <category term="Network" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Network/"/>
+    
+    
+    <category term="Ruckus" scheme="https://bruce27272.github.io/tags/Ruckus/"/>
+    
+    <category term="韌體升級" scheme="https://bruce27272.github.io/tags/%E9%9F%8C%E9%AB%94%E5%8D%87%E7%B4%9A/"/>
+    
+    <category term="ICX7150" scheme="https://bruce27272.github.io/tags/ICX7150/"/>
+    
+    <category term="Brocade" scheme="https://bruce27272.github.io/tags/Brocade/"/>
+    
+  </entry>
   
   <entry>
     <title>TFTP Server韌體更新、設定檔備份用軟體(Tftpd64)</title>
@@ -100,9 +135,9 @@
     <category term="Web" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Web/"/>
     
     
-    <category term="Gitalk" scheme="https://bruce27272.github.io/tags/Gitalk/"/>
-    
     <category term="Hexo" scheme="https://bruce27272.github.io/tags/Hexo/"/>
+    
+    <category term="Gitalk" scheme="https://bruce27272.github.io/tags/Gitalk/"/>
     
     <category term="Git" scheme="https://bruce27272.github.io/tags/Git/"/>
     
@@ -131,9 +166,9 @@
     <category term="Web" scheme="https://bruce27272.github.io/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Web/"/>
     
     
-    <category term="Hexo" scheme="https://bruce27272.github.io/tags/Hexo/"/>
-    
     <category term="Google Analytics" scheme="https://bruce27272.github.io/tags/Google-Analytics/"/>
+    
+    <category term="Hexo" scheme="https://bruce27272.github.io/tags/Hexo/"/>
     
     <category term="Hexo Next" scheme="https://bruce27272.github.io/tags/Hexo-Next/"/>
     

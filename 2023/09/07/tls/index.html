@@ -30,39 +30,35 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"bruce27272.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.18.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜尋...","empty":"我們無法找到任何有關 ${query} 的搜索結果","hits_time":"${hits} 找到 ${time} 個結果","hits":"找到 ${hits} 個結果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="在建立網站後，想說要運用Google Analytics來觀察瀏覽人數 找了一些資料後，發現Google Analytics於2023年7月開始要使用Google Analytics 4(GA4)來設定 目前我使用的Next主題需要做些調整才能順利抓取數據 很久以前有用過Google Analytics 但已經忘記如何申請 就重新申請並藉由這次做個紀錄">
+    <meta name="description" content="Transport Layer Security (TLS) 是一種廣泛採用的安全通訊協定 目的為提升網際網路通訊的私密性和資料安全性 TLS 的主要用例是對 web 應用程式和伺服器之間的通訊進行加密 TLS 還可以用於加密其他通訊，如電子郵件、資料傳遞…等 目前所推出的最新版本為TLS 1.3 由於TLS 1.1以下版本具有不安全性的漏洞 目前許多網站已停用TLS 1.1以下版本(包含舊版SS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Google Analytics 4（GA4）之 Hexo Next主題">
-<meta property="og:url" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/index.html">
+<meta property="og:title" content="Windows Server 關閉TLS 1.1以下版本">
+<meta property="og:url" content="https://bruce27272.github.io/2023/09/07/tls/index.html">
 <meta property="og:site_name" content="美食工程師">
-<meta property="og:description" content="在建立網站後，想說要運用Google Analytics來觀察瀏覽人數 找了一些資料後，發現Google Analytics於2023年7月開始要使用Google Analytics 4(GA4)來設定 目前我使用的Next主題需要做些調整才能順利抓取數據 很久以前有用過Google Analytics 但已經忘記如何申請 就重新申請並藉由這次做個紀錄">
+<meta property="og:description" content="Transport Layer Security (TLS) 是一種廣泛採用的安全通訊協定 目的為提升網際網路通訊的私密性和資料安全性 TLS 的主要用例是對 web 應用程式和伺服器之間的通訊進行加密 TLS 還可以用於加密其他通訊，如電子郵件、資料傳遞…等 目前所推出的最新版本為TLS 1.3 由於TLS 1.1以下版本具有不安全性的漏洞 目前許多網站已停用TLS 1.1以下版本(包含舊版SS">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/1.PNG">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/2.PNG">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/3.PNG">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/4.PNG">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/7.png">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/5.PNG">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/6.PNG">
-<meta property="og:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/8.PNG">
-<meta property="article:published_time" content="2023-08-08T10:52:23.000Z">
-<meta property="article:modified_time" content="2023-08-18T06:06:32.881Z">
+<meta property="og:image" content="https://bruce27272.github.io/2023/09/07/tls/1.PNG">
+<meta property="og:image" content="https://bruce27272.github.io/2023/09/07/tls/2.PNG">
+<meta property="og:image" content="https://bruce27272.github.io/2023/09/07/tls/3.PNG">
+<meta property="article:published_time" content="2023-09-07T02:10:14.000Z">
+<meta property="article:modified_time" content="2023-09-07T02:52:23.054Z">
 <meta property="article:author" content="Bruce">
-<meta property="article:tag" content="Google Analytics">
-<meta property="article:tag" content="Hexo">
-<meta property="article:tag" content="Hexo Next">
+<meta property="article:tag" content="Ruckus">
+<meta property="article:tag" content="韌體升級">
+<meta property="article:tag" content="ICX7150">
+<meta property="article:tag" content="Brocade">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/1.PNG">
+<meta name="twitter:image" content="https://bruce27272.github.io/2023/09/07/tls/1.PNG">
 
 
-<link rel="canonical" href="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/">
+<link rel="canonical" href="https://bruce27272.github.io/2023/09/07/tls/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh_TW","comments":true,"permalink":"https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/","path":"2023/08/08/GoogleAnalytics4/","title":"Google Analytics 4（GA4）之 Hexo Next主題"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh_TW","comments":true,"permalink":"https://bruce27272.github.io/2023/09/07/tls/","path":"2023/09/07/tls/","title":"Windows Server 關閉TLS 1.1以下版本"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Google Analytics 4（GA4）之 Hexo Next主題 | 美食工程師</title>
+<title>Windows Server 關閉TLS 1.1以下版本 | 美食工程師</title>
   <!-- Google tag (gtag.js) -->
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-G6CDTP1S08"></script>
  <script>
@@ -193,7 +189,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh_TW">
-    <link itemprop="mainEntityOfPage" href="https://bruce27272.github.io/2023/08/08/GoogleAnalytics4/">
+    <link itemprop="mainEntityOfPage" href="https://bruce27272.github.io/2023/09/07/tls/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -206,12 +202,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="Google Analytics 4（GA4）之 Hexo Next主題 | 美食工程師">
+      <meta itemprop="name" content="Windows Server 關閉TLS 1.1以下版本 | 美食工程師">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Google Analytics 4（GA4）之 Hexo Next主題
+          Windows Server 關閉TLS 1.1以下版本
         </h1>
 
         <div class="post-meta-container">
@@ -221,15 +217,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">發表於</span>
+      
 
-      <time title="創建時間：2023-08-08 18:52:23" itemprop="dateCreated datePublished" datetime="2023-08-08T18:52:23+08:00">2023-08-08</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新於</span>
-      <time title="修改時間：2023-08-18 14:06:32" itemprop="dateModified" datetime="2023-08-18T14:06:32+08:00">2023-08-18</time>
+      <time title="創建時間：2023-09-07 10:10:14 / 修改時間：10:52:23" itemprop="dateCreated datePublished" datetime="2023-09-07T10:10:14+08:00">2023-09-07</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -241,7 +231,7 @@
         </span>
           ，
         <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Web/" itemprop="url" rel="index"><span itemprop="name">Web</span></a>
+          <a href="/categories/%E6%8A%80%E8%A1%93%E7%B4%80%E9%8C%84/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
         </span>
     </span>
 
@@ -261,39 +251,62 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><p>在建立網站後，想說要運用Google Analytics來觀察瀏覽人數</p>
-<p>找了一些資料後，發現Google Analytics於2023年7月開始要使用Google Analytics 4(GA4)來設定</p>
-<p>目前我使用的Next主題需要做些調整才能順利抓取數據</p>
-<p>很久以前有用過Google Analytics 但已經忘記如何申請</p>
-<p>就重新申請並藉由這次做個紀錄</p>
+    <div class="post-body" itemprop="articleBody"><p>Transport Layer Security (TLS) 是一種廣泛採用的安全通訊協定</p>
+<p>目的為提升網際網路通訊的私密性和資料安全性</p>
+<p>TLS 的主要用例是對 web 應用程式和伺服器之間的通訊進行加密</p>
+<p>TLS 還可以用於加密其他通訊，如電子郵件、資料傳遞…等</p>
+<p>目前所推出的最新版本為TLS 1.3</p>
+<p>由於TLS 1.1以下版本具有不安全性的漏洞</p>
+<p>目前許多網站已停用TLS 1.1以下版本(包含舊版SSL)</p>
 <span id="more"></span>
 
-<p><img src="/2023/08/08/GoogleAnalytics4/1.PNG" alt="建立帳戶"></p>
-<p><img src="/2023/08/08/GoogleAnalytics4/2.PNG" alt="建立屬性"></p>
-<p><img src="/2023/08/08/GoogleAnalytics4/3.PNG" alt="設定商家"></p>
-<p><img src="/2023/08/08/GoogleAnalytics4/4.PNG" alt="選擇目標"></p>
-<p><img src="/2023/08/08/GoogleAnalytics4/7.png" alt="接受服務條款"></p>
-<p>在輸入串流網址後，在完成建立後可以看到串流ID跟評估ID</p>
-<p><img src="/2023/08/08/GoogleAnalytics4/5.PNG" alt="完成建立"></p>
-<p>接著找到需加入的程式碼，複製以下程式碼</p>
-<p><img src="/2023/08/08/GoogleAnalytics4/6.PNG" alt="程式碼"></p>
-<p>接著要註解掉主题配置文件中代碼及追踪ID</p>
-<p>檔案位置 &#x2F;themes&#x2F;next&#x2F;_config.yml</p>
-<p><code># Google Analytics</code><br><code>#google_analytics: xxxxxx</code></p>
-<p>更改主題文件google-analytics.njk</p>
-<p>檔案位置 &#x2F;themes&#x2F;next&#x2F;layout&#x2F;_third-party&#x2F;analytics&#x2F;google-analytics.njk</p>
-<p>原本的程式碼，建議先備份</p>
-<pre><code>&#123;%- if theme.google_analytics.tracking_id %&#125;    
-  &#123;%- if not theme.google_analytics.only_pageview %&#125;    
-   &lt;script async src=&quot;https://www.googletagmanager.com/gtag/js?id=&#123;&#123; theme.google_analytics.tracking_id &#125;&#125;&quot;&gt;&lt;/script&gt;    
-  &#123;%- endif %&#125;    
- &#123;&#123; next_data('google_analytics', theme.google_analytics) &#125;&#125;    
- &#123;&#123; next_js('third-party/analytics/google-analytics.js') &#125;&#125;    
-&#123;%- endif %&#125;    
+<p>在Windows Server 上關閉TLS 1.1以下版本</p>
+<p>只需新增機碼即可完成關閉作業</p>
+<p>於執行中輸入regedit開啟登陸編輯程式</p>
+<p>於 \HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols</p>
+<p>新增機碼TLS 1.1 →新增機碼Client、Server</p>
+<p>分別於Client、Server新增DWORD→(1)名稱：DisabledByDefault、數值資料：1 (2)名稱：Enabled、數值資料：0</p>
+<p>如下圖</p>
+<p><img src="/2023/09/07/tls/1.PNG" alt="Setting"></p>
+<p>或是使用記事本建立reg檔案來新增</p>
+<p>首先建立空白記事本新增以下內容並另存為附檔名.reg</p>
+<p>SSL 3.0</p>
+<pre><code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0]    
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Client]    
+&quot;Enabled&quot;=dword:00000000    
+&quot;DisabledByDefault&quot;=dword:00000001    
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Server]    
+&quot;Enabled&quot;=dword:00000000    
+&quot;DisabledByDefault&quot;=dword:00000001    
 </code></pre>
-<p>然後貼上剛剛複製的程式碼，如下圖</p>
-<p><img src="/2023/08/08/GoogleAnalytics4/8.PNG" alt="程式碼2"></p>
-<p>接著回到Google Analytics主控台就可以看到資料已收集</p>
+<p>TLS 1.0</p>
+<pre><code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0]    
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Client]    
+&quot;Enabled&quot;=dword:00000000    
+&quot;DisabledByDefault&quot;=dword:00000001    
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server]    
+&quot;Enabled&quot;=dword:00000000    
+&quot;DisabledByDefault&quot;=dword:00000001    
+</code></pre>
+<p>TLS 1.1</p>
+<pre><code>[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1]    
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Client]    
+&quot;Enabled&quot;=dword:00000000    
+&quot;DisabledByDefault&quot;=dword:00000001    
+
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server]    
+&quot;Enabled&quot;=dword:00000000    
+&quot;DisabledByDefault&quot;=dword:00000001    
+</code></pre>
+<p>如下圖</p>
+<p><img src="/2023/09/07/tls/2.PNG" alt="Setting"></p>
+<p>建立後直接執行即可新增機碼</p>
+<p><img src="/2023/09/07/tls/3.PNG" alt="Setting"></p>
 
     </div>
 
@@ -303,23 +316,21 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Google-Analytics/" rel="tag"># Google Analytics</a>
-              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-              <a href="/tags/Hexo-Next/" rel="tag"># Hexo Next</a>
+              <a href="/tags/Ruckus/" rel="tag"># Ruckus</a>
+              <a href="/tags/%E9%9F%8C%E9%AB%94%E5%8D%87%E7%B4%9A/" rel="tag"># 韌體升級</a>
+              <a href="/tags/ICX7150/" rel="tag"># ICX7150</a>
+              <a href="/tags/Brocade/" rel="tag"># Brocade</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/08/04/ruckus-7150/" rel="prev" title="Brocade/Ruckus-ICX7150 韌體升級及常用指令">
-                  <i class="fa fa-angle-left"></i> Brocade/Ruckus-ICX7150 韌體升級及常用指令
+                <a href="/2023/08/24/tftp/" rel="prev" title="TFTP Server韌體更新、設定檔備份用軟體(Tftpd64)">
+                  <i class="fa fa-angle-left"></i> TFTP Server韌體更新、設定檔備份用軟體(Tftpd64)
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/08/15/Gitalk/" rel="next" title="Hexo Next樣板開啟 Gitalk 留言版">
-                  Hexo Next樣板開啟 Gitalk 留言版 <i class="fa fa-angle-right"></i>
-                </a>
             </div>
           </div>
     </footer>
@@ -401,7 +412,7 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.css" integrity="sha256-AJnUHL7dBv6PGaeyPQJcgQPDjt/Hn/PvYZde1iqfp8U=" crossorigin="anonymous">
 
-<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"bruce27272","repo":"bruce27272.github.io","client_id":"ad1c0d8cfe15ff96b02b","client_secret":"cba8eb9f720167e391890671cb9af185ef84d46e","admin_user":"bruce27272","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"a7ad8d2116c417d9049a9d015957ca7b"}</script>
+<script class="next-config" data-name="gitalk" type="application/json">{"enable":true,"github_id":"bruce27272","repo":"bruce27272.github.io","client_id":"ad1c0d8cfe15ff96b02b","client_secret":"cba8eb9f720167e391890671cb9af185ef84d46e","admin_user":"bruce27272","distraction_free_mode":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token","language":"zh-TW","labels":"Gitalk","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/gitalk/1.8.0/gitalk.min.js","integrity":"sha256-MVK9MGD/XJaGyIghSVrONSnoXoGh3IFxLw0zfvzpxR4="},"path_md5":"009499b11e1879c2ecc10080f39457ba"}</script>
 <script src="/js/third-party/comments/gitalk.js"></script>
 
 </body>
